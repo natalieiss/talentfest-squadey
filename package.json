@@ -8,11 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-    "react-html5-camera-photo": "^1.5.9",
-=======
     "react-router-dom": "^6.3.0",
->>>>>>> 57ca2747ac0a5b0a0d4a15f1458b5855e1eae387
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
