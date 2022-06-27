@@ -1,14 +1,12 @@
 import React from "react";
-// import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Logo from "../components/Logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import Central from "../components/Central";
 
 function Login (){
     return(
         <main>
-        <Central>
         <Logo />
         <Input 
         type="number"
@@ -22,10 +20,9 @@ function Login (){
         type="submit"
         children="Entrar"
         />
-       {/* <Link to="Register">
+       <Link to="Register" className="hiperlink">
             Crie sua conta
-        </Link> */}
-        </Central>
+        </Link>
         </main>
     );
 }

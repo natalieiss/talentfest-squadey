@@ -1,0 +1,8 @@
+:root {
+    --font-color-EY-offBlack: #2E2E38;
+    --font-color-EY-gray01: #747480;
+    --font-color-EY-gray02: #C4C4CD;
+    --font-color-EY-offWhite: #F6F6FA;
+    --font-color-EY-yellow: #FFE600;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Roboto:wght@100&display=swap');
