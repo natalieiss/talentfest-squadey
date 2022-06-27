@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from 'react'
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Input from "../components/Input";
 import Logo from "../components/Logo";
 import Button from "../components/Button";
@@ -44,8 +44,8 @@ function Register() {
                 />
                 <Button type="submit" children="Cadastrar" />
             </form>
-            <Link to="login" className="hiperlink">
-            Já tem uma conta?
+            <Link to="/" className="hiperlink">
+                Já tem uma conta?
             </Link>
         </main>
     )
