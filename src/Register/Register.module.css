@@ -1,0 +1,5 @@
+@import '../layout/variables.css';
+
+.Form {
+    color: var(--font-color-one);
+}
