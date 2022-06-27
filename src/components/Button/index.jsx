@@ -1,6 +1,8 @@
-function Button({ type, children, onClick, className }) {
+import styles from "./style.module.css"
+
+function Button({ type, children, onClick }) {
     return (
-      <button type={type} className={className} onClick={onClick}>{children}</button>
+      <button type={type} className={styles.Button} onClick={onClick}>{children}</button>
     );
   }
   export default Button;
