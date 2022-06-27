@@ -1,12 +1,13 @@
 import React from "react";
-import Register from "./Register/Register";
+import UploadPhotos from "./pages/uploadPhotos";
 
 function App() {
   return (
     <div>
-      <Register />
+      <UploadPhotos />
     </div>
-  );
-}
+  )
+};
+
 
 export default App;
