@@ -20,7 +20,7 @@ function Login (){
         type="submit"
         children="Entrar"
         />
-       <Link to="Register" className="hiperlink">
+        <Link to="Register" className="hiperlink">
             Crie sua conta
         </Link>
         </main>
