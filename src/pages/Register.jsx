@@ -1,13 +1,13 @@
-import styles from "./Register.module.css"
-import { useState } from 'react'
 import React from "react";
+import { useState } from 'react'
+import {Link} from "react-router-dom";
 import Input from "../components/Input";
 import Logo from "../components/Logo";
 import Button from "../components/Button";
 
 function Register() {
 
-    function cadastrarUsuario(e) {
+    function createUser(e) {
         e.preventDefault()
         console.log(`Usuário ${rut} foi cadastrado com a senha: ${password}, email: ${email} `)
     }
@@ -17,30 +17,36 @@ function Register() {
     const [email, setEmail] = useState("")
 
     return (
-        <main className={styles.form}>
-            <form onSubmit={cadastrarUsuario}>
-                <Logo />
+        <main>
+            <Logo />
+            <form onSubmit={createUser}>
                 <Input
                     type="text"
                     placeholder="RUT"
+                    value="RUT"
                     onChange={(e) => setRut(e.target.value)}
                 />
                 <Input
                     type="text"
                     placeholder="E-MAIL"
+                    value="E-MAIL"
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <Input
                     type="password"
                     placeholder="Senha"
+                    value="Senha"
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <Input
                     type="password"
                     placeholder="Confirmação de Senha"
                 />
-                <Button type="submit" onClick="" children="Entrar" />
+                <Button type="submit" children="Cadastrar" />
             </form>
+            <Link to="login" className="hiperlink">
+            Já tem uma conta?
+            </Link>
         </main>
     )
 }
