@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./style.module.css";
 
-function Select(children) {
+function Select({children}) {
   return (
     <section className={styles.SelectSection}>
       <select className={styles.Selects}>

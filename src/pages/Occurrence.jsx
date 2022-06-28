@@ -4,7 +4,7 @@ import Title from "../components/Title";
 import Select from "../components/Select";
 import Button from "../components/Button";
 
-function Occurrance() {
+function Occurrence() {
   return (
     <>
       <Header />
@@ -15,4 +15,4 @@ function Occurrance() {
   );
 }
 
-export default Occurrance;
+export default Occurrence;

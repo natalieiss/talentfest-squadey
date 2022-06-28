@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Container from "../components/Container";
 import Form from "../components/Form";
@@ -6,13 +6,11 @@ import Logo from "../components/Logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import LinkText from "../components/Link";
-import {userLogin} from "../lib/authentication"
+import { userLogin } from "../lib/authentication"
 
 
 function Login() {
   const navigate = useNavigate();
-
-
 
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -20,10 +18,10 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     userLogin(email, password)
-        .then(() => {
-            
-        navigate("/Historic");
-        })}
+      .then(() => {
+        navigate("/historic");
+      })
+  }
 
   return (
     <Container customClass="centralize">
@@ -31,7 +29,7 @@ function Login() {
       <Form customClass="formLogin">
         <Input
           type="email"
-          placeholder="email"
+          placeholder="Email"
           customClass="input"
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -40,13 +38,12 @@ function Login() {
           placeholder="Senha"
           customClass="input"
           onChange={(e) => setPassword(e.target.value)}
-          
         />
         <Button
           type="submit"
           children="ENTRAR"
-          onClick={handleLogin}
           customClass="button"
+          onClick={handleLogin}
         />
         <LinkText href="register" customClass="hiperlink">
           Crie sua conta
