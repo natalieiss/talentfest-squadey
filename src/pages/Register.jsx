@@ -117,7 +117,7 @@ function Register() {
           onClick={createUser}
           customClass="button"
         />
-        <LinkText href="register" customClass="hiperlink">
+        <LinkText href="/" customClass="hiperlink">
           Já tem uma conta?
         </LinkText>
       </Form>

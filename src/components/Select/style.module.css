@@ -4,7 +4,7 @@ justify-content: center;
 }
 
 .Selects{
-background-color: #F5F5F5;
+background-color: var(--color-EY-offWhite);
 font-family: var(--font-default);
 color: var(--color-EY-offBlack);
 border: none;
