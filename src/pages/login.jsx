@@ -1,36 +1,44 @@
 import React from "react";
-import {Link, useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Container from "../components/Container";
+import Form from "../components/Form";
 import Logo from "../components/Logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import LinkText from "../components/Link";
 
-function Login (){
+function Login() {
+  const navigate = useNavigate();
 
-const navigate = useNavigate();
-
-const handleLogin = () => {
-    navigate("/Historic")
+  const handleLogin = () => {
+    navigate("/Historic");
   };
-    return(
-        <main>
-        <Logo />
-        <Input 
-        type="number"
-        placeholder="CPF"
+
+  return (
+    <Container customClass="centralize">
+      <Logo customClass="logoLogin" />
+      <Form customClass="formLogin">
+        <Input
+          type="number"
+          placeholder="Número do CPF"
+          customClass="input"
         />
-        <Input 
-        type="password"
-        placeholder="Senha"
+        <Input
+          type="password"
+          placeholder="Senha"
+          customClass="input"
         />
-        <Button 
-        type="submit"
-        children="Entrar"
-        onClick= {handleLogin}
+        <Button
+          type="submit"
+          children="ENTRAR"
+          onClick={handleLogin}
+          customClass="button"
         />
-       <Link to="Register" className="hiperlink">
-            Crie sua conta
-        </Link>
-        </main>
-    );
+        <LinkText href="register" customClass="hiperlink">
+          Crie sua conta
+        </LinkText>
+      </Form>
+    </Container>
+  );
 }
 export default Login;
