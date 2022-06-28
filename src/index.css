@@ -7,8 +7,7 @@
   box-sizing: border-box;
   text-decoration: none;
   border: none;
-  font-size: 6px;
-  background-color: var(--font-color-EY-offBlack);
+  background-color: var(--font-color-one);
 }
 
 body {
