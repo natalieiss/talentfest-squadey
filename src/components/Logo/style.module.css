@@ -1,16 +1,25 @@
 .logoLogin {
   height: 120px;
 }
+.logo {
+  height: 30px;
+}
 
 @media screen and (min-width: 550px) and (max-width: 1000px) {
   .logoLogin {
     height: 180px;
   } 
+  .logo {
+    height: 50px;
+  }
 }
 
 @media screen and (min-width: 1001px) {
   .logoLogin {
     height: 300px;
     margin-bottom: 85px;
+  }
+  .logo {
+    height: 70px;
   } 
 }
