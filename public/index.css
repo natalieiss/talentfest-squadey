@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;600&display=swap');
 
 :root {
-  --font-default: 'Inter', sans-serif; 
+  --font-default: 'Inter', sans-serif;
   --color-EY-offBlack: #2E2E38;
   --color-EY-gray01: #747480;
   --color-EY-gray02: #C4C4CD;
   --color-EY-offWhite: #F6F6FA;
   --color-EY-yellow: #FFE600;
 }
+
 * {
   list-style: none;
   margin: 0;
@@ -17,16 +18,24 @@
   background-color: var(--color-EY-offBlack);
   border: none;
 }
+
 #root {
   background-color: #2E2E38;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.hiperlink{
+
+.hiperlink {
   color: var(--color-EY-offWhite);
   font-size: 20px;
   display: flex;
   cursor: pointer;
 }
 
+footer {
+  background-color: var(--color-EY-yellow);
+  position: absolute;
+  right: 0;
+  left: 0;
+}

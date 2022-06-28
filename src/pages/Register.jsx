@@ -22,10 +22,6 @@ function Register() {
       setError('Email inválido');
       return
     }
-    if (!/^ (?=.* [A - Z])(?=.* [!#@$%&]) (?=.* [0 - 9])(?=.* [a - z]).{ 6, 15 } $/.test(password)) {
-      setError('Senha muito curta, por favor insira uma senha com mais de 6 caracteres');
-      return
-    }
   }
 
   /* MOSTRA TODOS OS ERROS
