@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Container from "../components/Container";
 import Form from "../components/Form";
@@ -6,24 +6,33 @@ import Logo from "../components/Logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import LinkText from "../components/Link";
-import {userLogin} from "../lib/authentication"
+import Message from "../components/Message/Message";
+import { userLogin } from "../lib/authentication";
 
 
 function Login() {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [error, setError] = useState();
 
-
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-
-  const handleLogin = async (e) => {
+    const handleLogin = async (e) => {
     e.preventDefault();
-    userLogin(email, password)
-        .then(() => {
-            
+    userLogin(email, password).then(() => {
         navigate("/Historic");
-        })}
+    }).catch((error) => {
+        const errorCode = error.code;
+        if (errorCode === "auth/wrong-password") {
+            setError("Senha incorreta.");
+        }
+        if (errorCode === "auth/invalid-email") {
+            setError("Email inválido")
+        }
+        if (errorCode === "auth/user-not-found") {
+            setError("Usuário não encontrado.");
+        }});
+};
 
   return (
     <Container customClass="centralize">
@@ -40,7 +49,6 @@ function Login() {
           placeholder="Senha"
           customClass="input"
           onChange={(e) => setPassword(e.target.value)}
-          
         />
         <Button
           type="submit"
