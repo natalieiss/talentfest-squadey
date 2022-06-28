@@ -1,9 +1,11 @@
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;600&display=swap');
 
-  --color-EY-off-black: #2E2E38;
-  --color-EY-gray-01: #747480;
-  --color-EY-gray-02: #C4C4CD;
-  --color-EY-off-white: #F6F6FA;
+:root {
+  --font-default: 'Inter', sans-serif; 
+  --color-EY-offBlack: #2E2E38;
+  --color-EY-gray01: #747480;
+  --color-EY-gray02: #C4C4CD;
+  --color-EY-offWhite: #F6F6FA;
   --color-EY-yellow: #FFE600;
 }
 * {
@@ -11,17 +13,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
+  font-family: var(--font-default);
   border: none;
-  font-size: 6px;
-  background-color: var(--color-EY-off-black);
+  background-color: var(--color-EY-offBlack);
 }
 body {
-  background-color: #2E2E38;
+    background-color: #2E2E38;
 }
 .hiperlink{
-color: var(  --color-EY-off-white);
-font-size: 20px;
-display: flex;
-cursor: pointer;
+  color: var(--color-EY-offWhite);
+  font-size: 20px;
+  display: flex;
+  cursor: pointer;
 }
+

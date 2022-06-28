@@ -1,8 +1,8 @@
 import styles from "./style.module.css";
 
-function Central({children}){
+function Central({customClass, children}){
     return(
-        <div className={styles.central}>{children}</div>
+        <div className={styles[customClass]}>{children}</div>
     )
 }
 export default Central;

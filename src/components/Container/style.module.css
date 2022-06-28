@@ -1,5 +1,8 @@
-.central{
+.centralize{
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  row-gap: 20px;
 }
