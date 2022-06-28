@@ -8,15 +8,16 @@
   text-decoration: none;
   border: none;
   font-size: 6px;
-  background-color: var(--font-color-one);
+  background-color: var(--font-color-EY-offBlack);
 }
+
 body {
-    background-color: #2E2E38;
+  background-color: var(--font-color-EY-offBlack);
 }
-.hiperlink{
-  color: var(  --font-color-EY-offWhite);
+
+.hiperlink {
+  color: var(--font-color-EY-offWhite);
   font-size: 20px;
   display: flex;
   cursor: pointer;
 }
-
