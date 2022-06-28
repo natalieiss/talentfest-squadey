@@ -1,3 +1,16 @@
-.LogoImg{
-    width: 50%;
+.logoLogin {
+  height: 120px;
+}
+
+@media screen and (min-width: 550px) and (max-width: 1000px) {
+  .logoLogin {
+    height: 180px;
+  } 
+}
+
+@media screen and (min-width: 1001px) {
+  .logoLogin {
+    height: 300px;
+    margin-bottom: 85px;
+  } 
 }

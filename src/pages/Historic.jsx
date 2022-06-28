@@ -8,9 +8,11 @@ import { useNavigate } from "react-router-dom";
 
 function Historic() {
   const navigate = useNavigate();
+  
   const handleOccurrance = () => {
     navigate("/Occurrance");
   };
+  
   return (
     <>
       <Header />

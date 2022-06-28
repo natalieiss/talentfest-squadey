@@ -1,0 +1,13 @@
+.formLogin {
+  width: 90%;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+@media screen and (min-width: 550px) {
+  .formLogin {
+    row-gap: 30px;
+  } 
+}

@@ -5,7 +5,7 @@ import Title from "../Title";
 
 function Header() {
   return (
-    <header className={styles.MainHeader}>
+    <header className={styles.mainHeader}>
       <Logo />
       <Title />
     </header>
