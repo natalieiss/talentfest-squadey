@@ -1,8 +1,8 @@
 import styles from "./style.module.css";
 
-function Central({customClass, children}){
+function Container({customClass, children}){
     return(
       <section className={styles[customClass]}>{children}</section>
     )
 }
-export default Central;
+export default Container;

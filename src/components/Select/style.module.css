@@ -1,0 +1,15 @@
+.SelectsSection{
+background-color: var(--color-EY-offBlack);
+justify-content: center;
+}
+
+.Selects{
+background-color: var(--color-EY-offWhite);
+font-family: var(--font-default);
+color: var(--color-EY-offBlack);
+border: none;
+}
+
+/* .SelectOption{
+
+} */
