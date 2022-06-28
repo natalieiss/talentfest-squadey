@@ -21,7 +21,7 @@ function Register() {
       setError('Email inválido');
       return
     }
-    if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/.test(password)) {
+    if (!/^ (?=.* [A - Z])(?=.* [!#@$%&]) (?=.* [0 - 9])(?=.* [a - z]).{ 6, 15 } $/.test(password)) {
       setError('Senha muito curta, por favor insira uma senha com mais de 6 caracteres');
       return
     }
@@ -117,7 +117,7 @@ function Register() {
           onClick={createUser}
           customClass="button"
         />
-        <LinkText href="register" customClass="hiperlink">
+        <LinkText href="/" customClass="hiperlink">
           Já tem uma conta?
         </LinkText>
       </Form>
