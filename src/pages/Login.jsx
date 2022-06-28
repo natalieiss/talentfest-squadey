@@ -17,9 +17,9 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    userLogin(email, password)
+    await userLogin(email, password)
       .then(() => {
-        navigate("/historic");
+        navigate("/history");
       })
   }
 

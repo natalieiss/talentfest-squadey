@@ -1,4 +1,12 @@
 .mainHeader {
-    background-color: #2E2E38;
-    width: 100%;
+  width: 100%;
+  background-color: var(--color-EY-offBlack);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.pageTitle {
+    font-size: 20px;
+    color: var(--color-EY-gray02);
+    font-family: var(--font-default);
+    font-weight: bold;
 }
