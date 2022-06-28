@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Historic from "./pages/Historic";
-import Occurrance from "./pages/Occurrance";
+import Occurrence from "./pages/Occurrence";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Route path="/" end element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/historic" element={<Historic />} />
-        <Route path="/occurrance" element={<Occurrance />} />
+        <Route path="/occurrence" element={<Occurrence />} />
       </Routes>
     </BrowserRouter>
   );

@@ -5,6 +5,7 @@ import Input from "../components/Input";
 import Logo from "../components/Logo";
 import Button from "../components/Button";
 import LinkText from "../components/Link";
+import Errors from "../components/Errors";
 
 function Register() {
   const [rut, setRut] = useState('');
@@ -20,7 +21,7 @@ function Register() {
       setError('Email inválido');
       return
     }
-    if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/.test(password)) {
+    if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/.test(password)) {
       setError('Senha muito curta, por favor insira uma senha com mais de 6 caracteres');
       return
     }
@@ -60,8 +61,8 @@ function Register() {
     }
     setMessage(validation);
   }
-
-
+ 
+ 
   */
   return (
     <Container customClass="centralize">
@@ -107,11 +108,15 @@ function Register() {
           onChange={(e) => setRepeatPassword(e.target.value)}
           required
         />
+        <div>
+          <Errors type="error" message={error} changeSetError={setError} />
+        </div>
         <Button
           type="submit"
           children="CADASTRAR"
           onClick={createUser}
-          customClass="button" />
+          customClass="button"
+        />
         <LinkText href="register" customClass="hiperlink">
           Já tem uma conta?
         </LinkText>
