@@ -6,7 +6,7 @@ import Logo from "../components/Logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import LinkText from "../components/Link";
-import {userLogin,auth} from "../lib/authentication"
+import {userLogin} from "../lib/authentication"
 
 
 function Login() {
@@ -19,7 +19,7 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    userLogin(auth, email, password)
+    userLogin(email, password)
         .then(() => {
             
         navigate("/Historic");
