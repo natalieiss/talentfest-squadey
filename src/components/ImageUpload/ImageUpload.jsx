@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { storage } from "./firebase";
+import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
+import { app } from "../../lib/firebaseConfig";
+
 
 function ImageUpload() {
   const [progress, setProgress] = useState(0);
+  const storage = getStorage(app);
+
   const formHandler = (e) => {
     e.preventDefault();
     const file = e.target[0].files[0];

@@ -6,6 +6,7 @@ import Logo from "../components/Logo";
 import Button from "../components/Button";
 import LinkText from "../components/Link";
 import Errors from "../components/Errors";
+import ImageUpload from "../components/ImageUpload/ImageUpload";
 
 function Register() {
   const [rut, setRut] = useState('');
