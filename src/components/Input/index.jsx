@@ -1,15 +1,16 @@
 import styles from "./style.module.css"
 
-<<<<<<< HEAD
-function Input({ type, placeholder, value, name, id, onChange }) {
+function Input({ type, placeholder, value, name, id, onChange, customClass }) {
     return (
-        <input onChange={onChange} id={id} name={name} value={value} type={type} placeholder={placeholder} className={styles.input} />
+        <input 
+          onChange={onChange} 
+          id={id}
+          name={name} 
+          value={value} 
+          type={type} 
+          placeholder={placeholder} 
+          className={styles[customClass]} 
+        />
     )
-=======
-function Input({ type, placeholder, customClass }) {
-  return (
-    <input type={type} placeholder={placeholder} className={styles[customClass]} />
-  );
->>>>>>> origin/main
 }
 export default Input;
