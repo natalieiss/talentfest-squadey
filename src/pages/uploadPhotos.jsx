@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { storage } from "./firebase";
+import { ref, getDownloadURL, uploadBytesResumable } from "firebaseConfig/storage";
+import { storage } from "../lib/firebaseConfig";
 
-function App() {
+function UploadPic() {
   const [progress, setProgress] = useState(0);
   const formHandler = (e) => {
     e.preventDefault();
@@ -27,14 +27,14 @@ function App() {
       (error) => console.log(error),
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL);
+          console.log("Arquivo disponível em", downloadURL);
         });
       }
     );
   };
 
   return (
-    <div className="App">
+    <div className="UploadPic">
       <form onSubmit={formHandler}>
         <input type="file" className="input" />
         <button type="submit">Upload</button>
@@ -45,4 +45,4 @@ function App() {
   );
 }
 
-export default App;
+export default UploadPic;
