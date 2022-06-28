@@ -6,6 +6,7 @@ import Logo from "../components/Logo";
 import Button from "../components/Button";
 import LinkText from "../components/Link";
 import Errors from "../components/Errors";
+import ImageUpload from "../components/ImageUpload/ImageUpload";
 
 function Register() {
   const [rut, setRut] = useState('');
@@ -19,10 +20,6 @@ function Register() {
     console.log(`Usuário ${rut} foi cadastrado com a senha: ${password}, email: ${email} `);
     if (!/\S+@\S+\.\S+/.test(email)) {
       setError('Email inválido');
-      return
-    }
-    if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/.test(password)) {
-      setError('Senha muito curta, por favor insira uma senha com mais de 6 caracteres');
       return
     }
   }

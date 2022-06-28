@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { storage } from "./firebase";
+import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
+import { app } from "../../lib/firebaseConfig";
 
-function App() {
+
+function ImageUpload() {
   const [progress, setProgress] = useState(0);
+  const storage = getStorage(app);
+
   const formHandler = (e) => {
     e.preventDefault();
     const file = e.target[0].files[0];
@@ -13,8 +16,8 @@ function App() {
   const uploadFiles = (file) => {
     //
     if (!file) return;
-    const sotrageRef = ref(storage, `files/${file.name}`);
-    const uploadTask = uploadBytesResumable(sotrageRef, file);
+    const storageRef = ref(storage, `files/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on(
       "state_changed",
@@ -37,12 +40,12 @@ function App() {
     <div className="App">
       <form onSubmit={formHandler}>
         <input type="file" className="input" />
-        <button type="submit">Upload</button>
+        <button type="submit">Suba sua imagem</button>
       </form>
       <hr />
-      <h2>Uploading done {progress}%</h2>
+      <h2>Enviando {progress}%</h2>
     </div>
   );
 }
 
-export default App;
+export default ImageUpload;
