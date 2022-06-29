@@ -6,6 +6,7 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 import Errors from "../components/Errors";
 import { userLogin } from "../lib/authentication";
+import { MdEmail } from "react-icons/md";
 
 function Login() {
   const navigate = useNavigate();
