@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./style.module.css";
+import Button from "../Button";
+import Modal from '../Modal';
 
 const Card = ({ data }) => {
-  console.log(data)
+  const [isModalVisible, setIsmodalVisible] = useState(false);
+  const handleClick = () => {
+    setIsmodalVisible(true);
+  }
+
   return (
+    <>
     <li className={styles.container}>
       <p className={styles.title}>Dados da Apólice</p>
       <ul className={styles.table}>
@@ -22,6 +29,10 @@ const Card = ({ data }) => {
         <li>
           <p className={styles.subTitle}>Fim de Vigência</p>
           <p className={styles.text}>{data.apo_data_fim.seconds}</p>
+        </li>
+        <li>
+               <p className={styles.subTitle}>Status do Pagamento</p>
+          { data.apo_status ? <p className={styles.text}>Pago</p> : <Button onClick={handleClick}>Pendente - Clique aqui pra regularizar</Button> }
         </li>
       </ul>
       <hr />
@@ -45,7 +56,12 @@ const Card = ({ data }) => {
           <p className={styles.text}>{data.sin_preco}</p>
         </li>
       </ul>
-    </li>
+    </li> 
+    <Modal> 
+      pagamento
+      <Button> pagar </Button>
+    </Modal>
+  </>
   );
 };
 

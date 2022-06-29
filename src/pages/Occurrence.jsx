@@ -124,6 +124,7 @@ function Occurrence() {
     //   .catch((error) => {});
   }
 
+
   return (
     <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />

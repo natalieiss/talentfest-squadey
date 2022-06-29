@@ -8,6 +8,7 @@ import Button from "../components/Button";
 import LinkText from "../components/Link";
 import Errors from "../components/Errors";
 import { userLogin } from "../lib/authentication";
+import { MdEmail } from "react-icons/md";
 
 function Login() {
   const navigate = useNavigate();
