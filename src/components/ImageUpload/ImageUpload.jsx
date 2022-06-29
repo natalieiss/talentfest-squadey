@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
 import { app } from "../../lib/firebaseConfig";
 
-function ImageUpload() {
+function ImageUpload({setImgUrl}) {
   const [progress, setProgress] = useState(0);
   const storage = getStorage(app);
 
@@ -28,7 +28,8 @@ function ImageUpload() {
       (error) => console.log(error),
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL);
+          console.log("File available at", downloadURL)
+          setImgUrl(downloadURL);
         });
       }
     );
@@ -36,10 +37,8 @@ function ImageUpload() {
 
   return (
     <div className="App">
-      <form onSubmit={formHandler}>
         <input type="file" className="input" />
-        <button type="submit">Suba sua imagem</button>
-      </form>
+        <button onClick={formHandler} type="submit">Suba sua imagem</button>
       <hr />
       <h2>Enviando {progress}%</h2>
     </div>

@@ -20,3 +20,13 @@ body {
   display: flex;
   cursor: pointer;
 }
+
+.occ_description {
+  background-color:  var(--color-EY-offWhite);
+}
+
+.form-occ-text{
+  color:  var(--font-color-EY-offWhite);
+  font-size: 16px;
+  font-weight: 600;
+}
