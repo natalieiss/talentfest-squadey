@@ -1,0 +1,11 @@
+.cont {
+  max-width: 90%;
+  background: var(--color-EY-offWhite);
+  padding: 15px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 20px;
+}

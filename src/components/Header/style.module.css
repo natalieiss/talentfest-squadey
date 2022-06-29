@@ -1,12 +1,19 @@
 .mainHeader {
   width: 100%;
+  max-width: 1024px;
   background-color: var(--color-EY-offBlack);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.6fr 3fr 0.6fr;
+  align-items: baseline;
+  justify-items: center;
+  position: fixed;
+  top: 0;
+  margin: 20px 0;
 }
 .pageTitle {
-    font-size: 20px;
-    color: var(--color-EY-gray02);
-    font-family: var(--font-default);
-    font-weight: bold;
+  font-size: 2rem;
+  color: var(--color-EY-gray02);
+  font-family: var(--font-default);
+  font-weight: bold;
+  justify-self: flex-start;
 }

@@ -1,4 +1,5 @@
-.button{
+.button, 
+.logout{
   width: 100%;
   height: 45px;
   background-color: var(--color-EY-yellow);
@@ -8,6 +9,17 @@
   text-align: center;
   border-radius: 3px;
   margin-top: 20px;
+  cursor: pointer;
+}
+.logout {
+  width: 50px;
+  height: 30px;
+  font-size: 0.75rem;
+  margin: 0;
+}
+.button:active, 
+.logout:active{
+  transform: translateY(3px);
 }
 
 @media screen and (min-width: 550px) and (max-width: 1000px) {
@@ -15,6 +27,10 @@
     height: 55px;
     font-size: 1.25rem;
     margin-top: 30px;
+  }
+  .logout {
+    width: 60px;
+    font-size: 0.875rem;
   } 
 }
 
@@ -23,5 +39,9 @@
     height: 60px;
     font-size: 1.375rem;
     margin-top: 40px;
+  }
+  .logout {
+    width: 70px;
+    font-size:1rem;
   } 
 }
