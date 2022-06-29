@@ -8,11 +8,11 @@ import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 import {useState} from "react"
 
-function Historic() {
+function History() {
   const navigate = useNavigate();
   
-  const handleOccurrance = () => {
-    navigate("/Occurrance");
+  const handleOccurrence = () => {
+    navigate("/Occurrence");
   };
   
   const [isModalVisible, setIsmodalVisible] = useState(false);
@@ -27,4 +27,4 @@ function Historic() {
     </Container>
   );
 }
-export default Historic;
+export default History;
