@@ -127,7 +127,7 @@ function Occurrence() {
   return (
     <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />
-      <Form customClass="container-infos-occ" onSubmit={handleSubmit}>
+      <Form customClass="formOccurence" onSubmit={handleSubmit}>
         <Select
           customClass="select-occurrence"
           options={arrOptions}

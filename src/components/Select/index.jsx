@@ -3,9 +3,9 @@ import styles from "./style.module.css";
 
 function Select({ options, onChange, customClass, defaultValue}) {
   return (
-    <section className={styles.selectsSection}>
+   
       <select className={styles[customClass]} onChange={onChange}>
-        <option  className={styles[customClass]}>
+        <option selected disabled className={styles[customClass]}>
           {defaultValue}
         </option>
         {options.map((option, i) => (
@@ -14,7 +14,7 @@ function Select({ options, onChange, customClass, defaultValue}) {
           </option>
         ))}
       </select>
-    </section>
+   
   );
 }
 
