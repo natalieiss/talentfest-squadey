@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
 import { app } from "../lib/firebaseConfig";
 // import { createOccurrence } from "../lib/firestore";
+
 //1- getDocs de veículos do usuário logado
 //2- a partir disso, criar array p o select de veículos
 //3- dentro do array precisa ter : marca e placa do veículo 
@@ -133,12 +134,12 @@ function Occurrence() {
           onChange={handleChange}
           defaultValue="Tipos de Sinistro"
         />
-        <Select
+        {/* <Select
           customClass="select-occurrence"
-
+          options={null}
           onChange={handleChange}
           defaultValue="Tipos de Veículo"
-        />
+        /> */}
         <div className="App">
           <input type="file" className="input" />
           <button onClick={formHandler} type="submit">
@@ -202,7 +203,7 @@ function Occurrence() {
               e que arcarei com as consequências de afirmações inverídicas.
             </p>
           </Modal>
-        ) : null}
+        ) : null}c
         <Button type="submit" customClass="button">
           Abrir Sinistro
         </Button>
