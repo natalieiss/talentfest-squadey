@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
 import { app } from "../../lib/firebaseConfig";
 
-
 function ImageUpload() {
   const [progress, setProgress] = useState(0);
   const storage = getStorage(app);
@@ -14,7 +13,6 @@ function ImageUpload() {
   };
 
   const uploadFiles = (file) => {
-    //
     if (!file) return;
     const storageRef = ref(storage, `files/${file.name}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
