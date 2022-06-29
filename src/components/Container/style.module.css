@@ -22,6 +22,9 @@
   row-gap: 20px;
   background: var(--color-EY-offBlack);
 }
+.container-infos-occ{
+  background-color: antiquewhite;
+}
 
 @media screen and (min-width: 1001px) {
   .centralize {
