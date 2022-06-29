@@ -6,7 +6,6 @@ import Select from "../components/Select";
 import Button from "../components/Button";
 import Textarea from '../components/Textarea';
 import Modal from "../components/Modal";
-import ImageUpload from "../components/ImageUpload";
 import Footer from '../components/Footer';
 
 function Occurrence() {
@@ -102,7 +101,7 @@ function Occurrence() {
           onChange={handleChange}
           defaultValue="Tipos de Veículo"
         />
-        <ImageUpload onClick={null} progress={null} />
+
         <Textarea customClass="description" rows="5" cols="70" placeholder="Descreva o ocorrido"></Textarea>
         <Button type="button" onClick={() => { setIsmodalVisible(true) }}>Termos e Condições</Button>
         {isModalVisible ?
