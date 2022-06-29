@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import Container from "../components/Container";
 import Header from "../components/Header";
+import Form from "../components/Form";
 import Select from "../components/Select";
 import Button from "../components/Button";
-import Container from "../components/Container";
 import Modal from "../components/Modal";
 import ImageUpload from "../components/ImageUpload/ImageUpload";
+import Footer from '../components/Footer';
 import styles from "./occurrence.module.css";
 
 function Occurrence() {
@@ -85,9 +87,9 @@ function Occurrence() {
   const [isModalVisible, setIsmodalVisible] = useState(false);
 
   return (
-    <>
+    <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />
-      <Container customClass="container-infos-occ">
+      <Form customClass="container-infos-occ">
         <Select
           customClass="select-occurrence"
           options={arrOptions}
@@ -112,8 +114,9 @@ function Occurrence() {
             </p>
           </Modal> : null}
         <Button customClass="button">Abrir Sinistro</Button>
-      </Container>
-    </>
+      </Form>
+      <Footer />
+    </Container>
   );
 }
 
