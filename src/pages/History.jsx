@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { getPolicy } from '../lib/firestore';
 import Container from "../components/Container";
 import Header from "../components/Header";
@@ -9,14 +9,32 @@ import Footer from '../components/Footer';
 
 function History() {
   const [policy, setPolicy] = useState([]);
+  const [userId, setUserId] = useState();
 
-  useEffect(() => {
-    async function showAllPolicy() {
-      const allPolicy = await getPolicy();
+  const id = `ID-00000324`;
+  const estado = "Solicitação Enviada";
+  const subEstado = "N/A";
+  const preco = 10000;
+  const tipo = "Colisão";
+  const idPolicy = "";
+  
+  
+  const showAllPolicy = useCallback(async() => {
+    console.log(userId)
+    if(userId) {
+      const allPolicy = await getPolicy(userId);
+      console.log(allPolicy)
       setPolicy(allPolicy);
-    };
-    showAllPolicy();
-  }, []);
+    }    
+  }
+  ,[userId])
+  
+      useEffect(()=>{
+      authChange(setUserId)
+      showAllPolicy();
+    },[showAllPolicy]);
+  
+  const [isModalVisible, setIsmodalVisible] = useState(false);
 
   return (
     <Container customClass="containerHistory">

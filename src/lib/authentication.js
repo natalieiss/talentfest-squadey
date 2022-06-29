@@ -18,6 +18,6 @@ export function logout() {
 
 export function authChange(callback) {
   onAuthStateChanged(auth, (user) => {
-    callback(user !== null);
+    callback(user.uid);
   });
 }
