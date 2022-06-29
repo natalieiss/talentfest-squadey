@@ -1,7 +1,6 @@
 import {
   getFirestore,
   collection,
-  addDoc,
   query,
   orderBy,
   getDocs,
