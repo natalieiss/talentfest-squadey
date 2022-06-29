@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { getPolicy } from '../lib/firestore';
+import { authChange } from '../lib/authentication';
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Link from "../components/Link";
@@ -17,23 +18,23 @@ function History() {
   const preco = 10000;
   const tipo = "Colisão";
   const idPolicy = "";
-  
-  
-  const showAllPolicy = useCallback(async() => {
+
+
+  const showAllPolicy = useCallback(async () => {
     console.log(userId)
-    if(userId) {
+    if (userId) {
       const allPolicy = await getPolicy(userId);
       console.log(allPolicy)
       setPolicy(allPolicy);
-    }    
+    }
   }
-  ,[userId])
-  
-      useEffect(()=>{
-      authChange(setUserId)
-      showAllPolicy();
-    },[showAllPolicy]);
-  
+    , [userId])
+
+  useEffect(() => {
+    authChange(setUserId)
+    showAllPolicy();
+  }, [showAllPolicy]);
+
   const [isModalVisible, setIsmodalVisible] = useState(false);
 
   return (
