@@ -1,3 +1,25 @@
 .footer {
-    background-color: var(--color-EY-yellow);
+  max-width: 1024px;
+  width: 100%;
+  padding: 0 20px;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 20px;
+}
+.footer p {
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--color-EY-offWhite);
+}
+
+@media screen and (min-width: 550px) and (max-width: 1000px) {
+  .footer p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .footer p {
+    font-size: 1.125rem;
+  }
 }
