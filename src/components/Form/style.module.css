@@ -6,6 +6,11 @@
   flex-direction: column;
   row-gap: 20px;
 }
+.container-infos-occ{
+  max-width: 600px;
+  width: 90%;
+  border: 1px red solid;
+}
 
 @media screen and (min-width: 550px) {
   .formLogin {
