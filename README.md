@@ -1,70 +1,201 @@
-# Getting Started with Create React App
+# Talent Fest Laboratoria SP - Desafio EY
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Índice
 
-## Available Scripts
+- [1. Introdução](#1-Introdução)
+- [2. Resumo do Projeto](#2-Resumo-do-projeto)
+- [3. Futuro do Projeto](#3-Futuro-do-Projeto)
+- [4. Implementando melhorias que facilitem o acesso ao canal de atendimento](#Implementando-melhorias)
+- [5.Fluxogramas](#5-Fluxogramas)
+- [6.Protótipo e testes de usabilidade](#6-protótipo-e-testes-de-usabilidade)
+- [7.Demonstrações da aplicação web](#7-Demonstrações-da-aplicação-web)
+- [8.Tecnologias e Ferramentas Utilizadas](#8-Tecnologias-e-ferramentas-utilizadas)
+- [9. Desenvolvedoras](#9-desenvolvedoras)
 
-In the project directory, you can run:
+## 1. INTRODUÇÃO
 
-### `npm start`
+![ey seguros](./src/assets/readme/logo.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h2>EY Seguros</h2>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Projeto desenvolvido no bootcamp de front-end da Laboratoria para o evento denominado Demo Day. Nosso desafio foi proposto pela empresa EY e neste projeto desenvolvemos uma aplicação web na modalidade desktop _responsivo_ (_mobile_) que ofereça aos clientes de uma seguradora de automóveis, uma alternativa fácil e rápida para abertura de sinistros.
+Neste desafio tivemos que criar um banco de dados de back-end do zero e para isso optamos por depositar as coleções do nosso banco de dados no FireStore do Google Firebase.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
+## 2. RESUMO DO PROJETO
 
-### `npm run build`
+O aplicativo da EY Seguros oferece uma forma rápida e fácil para gerenciar/criar sinistros. Nele é possível que o cliente acesse seu histórico e efetue a criação de um sinistro. Para que o cliente consiga realizar a abertura de um sinistro é necessário que preencha o formulário, acrescente uma foto do veículo e aceite os termos e condições da seguradora.
+Neste desafio, para iniciar a criação da aplicação, foram fornecidas três histórias de usuário:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Caminho Feliz (História de Usuário 1)
+![User History 1](./src/assets/readme/historiadeusuario1.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Caminho Infeliz 1 (História de Usuário 2)
+![User History 2](./src/assets/readme/historiadeusu%C3%A1rio2.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Caminho Infeliz 2 (História de Usuário 3)
+![User History 3](./src/assets/readme/historiadeusuario3.jpg)
+![User History 3.1](./src/assets/readme/historiadeusuario3.1.jpg)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clique [aqui](https://natalieiss.github.io/Terceiro-Projeto-Social-Network) para conferir o resultado da aplicação. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Por se tratar de um MVP na versão V.1.0.0 (versão beta), a função de login e cadastro não estará disponível para o público geral, apenas para os desenvolvedores. Esta função será disponibilizada na versão V.2.0.0.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
+## 3. FUTURO DO PROJETO
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para as próximas implementações (v2.0) iremos melhorar a segurança de nossos usuários acrescentando uma Política de Privacidade e Cookies, haverá um termo de usuário que deverá ser aceito no momento do cadastro.
+Esta projeto também será refatorado. Será aprimorada a responsividade para os tablets e celulares. Serão implementadas melhorias na estilização do CSS.
+Também serão implementados novos testes assíncronos e unitários.
+Acrescentaremos também novos recursos para melhorar a acessibilidade na aplicação.
+Ainda, pensando em solucionar as chamadas _"dores dos usuários"_ acrescentaremos um canal de atendimento por chat no intuito de atender as expectativas indicadas pelos nossos possíveis usuários durante o preenchimento da nossa pesquisa (https://docs.google.com/forms/d/e/1FAIpQLSeiVY99B4Z_S7eQhYpNtOCx5lCFf1kwg6RUugQ7jcXlfO2I0g/viewform?usp=sf_link).
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 4. IMPLEMENTANDO MELHORIAS QUE FACILITEM O ACESSO AO CANAL DE ATENDIMENTO
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Tentamos pensar diversas situações que nossos usuários pudessem estar passando no momento da abertura de um sinistro. Imagine você, usuário, localizado no meio de uma BR, sem sinal de wi-fi, precisando solicitar um reboque (que a sua seguradora oferece) para o seu carro que colidiu com outro. O usuário, no momento de um desespero, precisa de uma aplicação que lhe facilite o contato com o seu prestador de serviços independente do meio utilizado. Desta forma, pensando em aprimorar a experiência de nossos usuários bem como facilitar o contato entre prestador de serviços e cliente decidimos disponibilizar, em todo o ambiente da aplicação, os canais de atendimento telefônico da empresa. Para implementar essa funcionalidade, seguimos os passos a seguir mencionados.
+## Desta forma, pensando em aprimorar a experiência do usuário, foi criada uma Proto Persona com as seguintes características:
 
-### Code Splitting
+![Proto persona](./src/assets/readme/canaldeatendimento1.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Realizamos uma breve [pesquisa](https://docs.google.com/forms/d/e/1FAIpQLSeiVY99B4Z_S7eQhYpNtOCx5lCFf1kwg6RUugQ7jcXlfO2I0g/viewform?usp=sf_link) de usuário para validarmos a proto persona. A pesquisa obteve a participação de 20 pessoas e forneceu os seguintes resultados:
 
-### Analyzing the Bundle Size
+![Implementação](./src/assets/readme/pesquisa1.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Entendendo o usuário](./src/assets/readme/pesquisa2.jpg)
 
-### Making a Progressive Web App
+![Respostas exemplificativa](./src/assets/readme/pesquisa3.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Canais de atendimento](./src/assets/readme/pesquisa4.jpg)
 
-### Advanced Configuration
+## Através da pesquisa de usuário realizada foi criada a quarta história de usuário:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![User History 1](./src/assets/readme/canaldeatendimento2.jpg)
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 5. FLUXOGRAMAS
+## Com base nas historias de usuário nós criamos os fluxogramas para cada uma delas.
 
-### `npm run build` fails to minify
+<p>Caminho Feliz</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Fluxograma 1](./src/assets/readme/fluxograma1.jpg)
+
+<p>Caminho Infeliz 1</p>
+
+![Fluxograma 2](./src/assets/readme/fluxograma2.jpg)
+
+---
+## 6. PROTÓTIPO E TESTES DE USABILIDADE
+
+## Visualizamos uma aplicação que refletisse as cores marcantes da EY e tentamos replicar a mesma fonte utilizada por ela em suas aplicações e websites para tornar a experiência mais imersiva.
+
+![Prototipo 1](./src/assets/readme/prototipo.jpg)
+![Paleta de Cores](./src/assets/readme/paletadecores.png)
+
+## Com o auxílio do Figma também criamos um protótipo interativo para ser utilizado nos testes iniciais de usabilidade sendo que obtivemos um feedback bastante positivo.
+
+<p align="center">
+  <img width="600" height="337" src="./src/assets/readme/demonstracaoteste.gif"/>
+</p>
+
+---
+## 7. DEMONSTRAÇÕES DA APLICAÇÃO WEB
+
+<p align="center">Versão Web</p>
+<p align="center">
+  <img width="600" height="255" src="./src/assets/readme/web1.gif"/>
+  <img width="600" height="255" src="./src/assets/readme/web2.gif"/>
+  <img width="600" height="255" src="./src/assets/readme/web3.gif"/>
+</p>
+<p align="center">Versão Mobile</p>
+<p align="center">
+  <img width="600" height="450" src="./src/assets/readme/tablet1.gif"/>
+  <img width="362" height="480" src="./src/assets/readme/tablet2.gif"/>
+</p>
+<p align="center">Versão Tablet</p>
+<p align="center">
+  <img width="600" height="450" src="./src/assets/readme/tablet1.gif"/>
+  <img width="362" height="480" src="./src/assets/readme/tablet2.gif"/>
+</p>
+
+---
+## 8. TECNOLOGIAS E FERRAMENTAS UTILIZADAS
+
+- **Planejamento: [Trello](https://trello.com/b/pDCrPOah/3ey-talentfest)**
+- **Protótipos: [Figma](https://www.figma.com/file/Xuz6uKFRIwaeuvmBPlt7nY/EY?node-id=0%3A1)**
+- **HTML5** <img alt="html5" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" />
+- **CSS3** <img alt="css3" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" />    
+- **JavaScript** <img alt="JS" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />    
+- **React** <img alt="react" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
+- **JSX** <img alt="jsx" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+- **Node JS** <img alt="node" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" />     
+- **Heroku** <img alt="heroku" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original-wordmark.svg" />
+- **Jest** <img alt="jest" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
+- **Firebase** <img alt="firebase" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" />
+- **Git** <img alt="git" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" />
+- **GitHub** & **GitHubProjects** <img alt="github" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" />
+- **Visual Studio Code** <img alt="vscode" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain-wordmark.svg" />
+- **API** 
+
+---
+## 9. DESENVOLVEDORAS DO PROJETO
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/adrianatwatanabe">
+  <img align="center" alt="Adriana Watanabe"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/adrianatwatanabe"> <br>       
+  <sub>
+          <b>Adriana Watanabe</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/nannayusuf">
+  <img align="center" alt="Helena Gonçalves"  width="100px;"style="border-radius:50px;" src="https://avatars.githubusercontent.com/nannayusuf"/><br>
+             <sub>
+          <b>Helena Gonçalves</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Gregisa">
+  <img align="center" alt="Isabela Gregoraci"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/Gregisa"> <br>       
+  <sub>
+          <b>Isabela Gregoraci</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/JessikaMirella">
+  <img align="center" alt="Jessika Mirella"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/JessikaMirella"> <br>       
+  <sub>
+          <b>Jessika Mirella</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/natalieiss">
+  <img align="center" alt="Natalie Silva"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/natalieiss"> <br>       
+  <sub>
+          <b>Natalie Silva</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+ <tr>
+    <td align="center">
+      <a href="https://github.com/moreirathais">
+  <img align="center" alt="Thais Moreira"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/moreirathais"> <br>       
+  <sub>
+          <b>Thais Moreira</b>
+        </sub>
+      </a>
+    </td>
+</table>
+
+---
