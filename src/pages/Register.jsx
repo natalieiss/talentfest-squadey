@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Container from "../components/Container";
 import Form from "../components/Form";
 import Input from "../components/Input";
 import Logo from "../components/Logo";
@@ -62,13 +61,13 @@ function Register() {
  
   */
   return (
-    <Container customClass="centralize">
+    <>
       <Logo customClass="logoLogin" />
       <Form customClass="formLogin">
         <Input
           type="text"
           placeholder="Número do CPF"
-          customClass="input"
+          customClass="inputLogin"
           name="rut"
           id="rut"
           value={rut}
@@ -77,8 +76,8 @@ function Register() {
         />
         <Input
           type="text"
-          placeholder="E-MAIL"
-          customClass="input"
+          placeholder="Email"
+          customClass="inputLogin"
           name="email"
           id="email"
           value={email}
@@ -88,7 +87,7 @@ function Register() {
         <Input
           type="password"
           placeholder="Senha"
-          customClass="input"
+          customClass="inputLogin"
           name="password"
           id="password"
           value={password}
@@ -98,27 +97,25 @@ function Register() {
         <Input
           type="password"
           placeholder="Confirmação de Senha"
-          customClass="input"
+          customClass="inputLogin"
           name="repeatPassword"
           id="repeatPassword"
           value={repeatPassword}
           onChange={(e) => setRepeatPassword(e.target.value)}
           required
         />
-        <div>
-          <Errors type="error" message={error} changeSetError={setError} />
-        </div>
+        <Errors type="error" message={error} changeSetError={setError} />
         <Button
           type="submit"
           children="CADASTRAR"
           onClick={createUser}
-          customClass="button"
+          customClass="buttonLogin"
         />
         <LinkText href="/" customClass="hiperlink">
           Já tem uma conta?
         </LinkText>
       </Form>
-    </Container>
+    </>
   )
 }
 

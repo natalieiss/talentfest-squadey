@@ -2,11 +2,11 @@
 
 :root {
   --font-default: 'Inter', sans-serif;
-  --color-EY-offBlack: #2E2E38;
+  --color-EY-offBlack: #2e2e38;
   --color-EY-gray01: #747480;
-  --color-EY-gray02: #C4C4CD;
-  --color-EY-offWhite: #F6F6FA;
-  --color-EY-yellow: #FFE600;
+  --color-EY-gray02: #c4c4cd;
+  --color-EY-offWhite: #f6f6fa;
+  --color-EY-yellow: #ffe600;
 }
 
 * {
@@ -15,27 +15,24 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-default);
-  background-color: var(--color-EY-offBlack);
+  color: var(--color-EY-offBlack);
   border: none;
 }
 
 #root {
-  background-color: #2E2E38;
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  row-gap: 20px;
+  background: var(--color-EY-offBlack);
 }
 
-.hiperlink {
-  color: var(--color-EY-offWhite);
-  font-size: 20px;
-  display: flex;
-  cursor: pointer;
-}
-
-footer {
-  background-color: var(--color-EY-yellow);
-  position: absolute;
-  right: 0;
-  left: 0;
+@media screen and (min-width: 1001px) {
+  #root {
+    flex-direction: row;
+    column-gap: 100px;
+  }
 }

@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import Container from "../components/Container";
 import Header from "../components/Header";
+import Form from "../components/Form";
 import Select from "../components/Select";
 import Button from "../components/Button";
-import Container from "../components/Container";
+import Modal from "../components/Modal";
+import Input from "../components/Input";
 import ImageUpload from "../components/ImageUpload/ImageUpload";
+import Footer from "../components/Footer";
 import styles from "./occurrence.module.css";
 
 function Occurrence() {
@@ -81,10 +85,12 @@ function Occurrence() {
     },
   ];
 
+  const [isModalVisible, setIsmodalVisible] = useState(false);
+
   return (
-    <Container customClass="centralize">
+    <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />
-      <Container customClass="container-infos-occ">
+      <Form customClass="container-infos-occ">
         <Select
           customClass="select-occurrence"
           options={arrOptions}
@@ -99,12 +105,39 @@ function Occurrence() {
         />
         <ImageUpload />
         <textarea className={styles.occ_description} rows="5" cols="33">
-          Descrição do ocorrido 
+          Descrição do ocorrido
         </textarea>
+        {isModalVisible ? (
+          <Modal
+            onClose={() => {
+              setIsmodalVisible(false);
+            }}
+          >
+            <Button
+              type="button"
+              onClick={() => {
+                setIsmodalVisible(true);
+              }}
+            >
+              Termos e Condições
+            </Button>
+            <p>
+              Declaro que todas as informações constantes neste formulário para
+              fins de abertura de sinistro, são completas, verdadeiras e
+              corretas em todos os detalhes.Tendo ciência que serão averiguadas
+              e que arcarei com as consequências de afirmações inverídicas.
+            </p>
+            <Input type="checkbox" />
+            <label>Concordo com o termo acima</label>
+          </Modal>
+        ) : null}
         <Button customClass="button">Abrir Sinistro</Button>
-      </Container>
+      </Form>
+      <Footer />
     </Container>
   );
 }
 
 export default Occurrence;
+
+

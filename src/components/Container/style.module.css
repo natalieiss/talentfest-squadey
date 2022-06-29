@@ -1,5 +1,5 @@
 .centralize{
-  width: 100vw;
+  width: 90%;
   height: 100vh;
   max-width: 1024px;
   display: flex;
@@ -8,13 +8,30 @@
   align-items: center;
   row-gap: 20px;
 }
-.container-infos-occ{
-  background-color: antiquewhite;
+.containerHistory {
+  width: 100%;
+  max-width: 1024px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  background-color: var(--color-EY-offBlack);
+}
+
+@media screen and (min-width: 550px) and (max-width: 1000px) {
+  .containerHistory {
+    top: 105px;
+  }
 }
 
 @media screen and (min-width: 1001px) {
   .centralize {
     flex-direction: row;
     column-gap: 100px;
+  }
+  .containerHistory {
+    top: 105px;
   }
 }
