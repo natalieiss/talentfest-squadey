@@ -27,8 +27,7 @@ function History() {
       console.log(allPolicy)
       setPolicy(allPolicy);
     }
-  }
-    , [userId])
+  } , [userId])
 
   useEffect(() => {
     authChange(setUserId)

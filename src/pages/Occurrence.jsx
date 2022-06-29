@@ -86,6 +86,7 @@ function Occurrence() {
 
   const [isModalVisible, setIsmodalVisible] = useState(false);
 
+
   return (
     <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />
