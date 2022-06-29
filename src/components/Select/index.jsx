@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 function Select({ options, onChange, defaultValue, customClass }) {
   return (
     <select className={styles[customClass]} onChange={onChange}>
-      <option value="" selected disabled className={styles[customClass]}>
+      <option selected disabled className={styles[customClass]}>
         {defaultValue}
       </option>
       {options.map((option, i) => (

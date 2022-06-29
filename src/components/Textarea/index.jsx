@@ -2,7 +2,9 @@ import styles from "./style.module.css";
 
 const Textarea = ({ customClass, rows, cols, placeholder, children }) => {
   return (
-    <textarea class={styles[customClass]} autocomplete="on" rows={rows} cols={cols} spellcheck="true" wrap="hard" placeholder={placeholder}>{children}</textarea>
+    <textarea className={styles[customClass]} rows={rows} cols={cols} placeholder={placeholder}>
+      {children}
+    </textarea>
   )
 }
 

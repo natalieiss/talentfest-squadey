@@ -104,9 +104,9 @@ function Occurrence() {
         />
         <ImageUpload onClick={null} progress={null} />
         <Textarea customClass="description" rows="5" cols="70" placeholder="Descreva o ocorrido"></Textarea>
+        <Button type="button" onClick={() => { setIsmodalVisible(true) }}>Termos e Condições</Button>
         {isModalVisible ?
           <Modal onClose={() => { setIsmodalVisible(false) }}>
-            <Button type="button" onClick={() => { setIsmodalVisible(true) }}>Termos e Condições</Button>
             <p>
               Declaro que todas as informações constantes neste formulário para fins de abertura de sinistro, são completas, verdadeiras e corretas em todos os detalhes.Tendo ciência que serão averiguadas e que arcarei com as consequências de afirmações inverídicas.
             </p>
