@@ -5,19 +5,21 @@ import Header from "../components/Header";
 // import Input from "../components/Input";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import ImageUpload from "../components/ImageUpload/ImageUpload";
 
-function Historic() {
+function History() {
   const navigate = useNavigate();
   
-  const handleOccurrance = () => {
-    navigate("/Occurrance");
+  const handleOccurrence = () => {
+    navigate("/Occurrence");
   };
   
   return (
     <Container >
       <Header customClass="centralize" children="HISTÓRICO"/>
-      <Button onClick={handleOccurrance}>Aviso de Sinistro</Button>
+      <Button onClick={handleOccurrence}>Aviso de Sinistro</Button>
+      <ImageUpload />
     </Container>
   );
 }
-export default Historic;
+export default History;
