@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from "./style.module.css";
 
-const Card = (data) => {
+const Card = ({data}) => {
+  console.log(data)
   return (
     <li className={styles.cont}>
       <p>Dados da Apólice</p>
@@ -16,11 +17,11 @@ const Card = (data) => {
         </li>
         <li>
           <p>Início de Vigência</p>
-          <p>{data.apo_data_inicio}</p>
+          <p>{data.apo_data_inicio.seconds}</p>
         </li>
         <li>
           <p>Fim de Vigência</p>
-          <p>{data.apo_data_fim}</p>
+          <p>{data.apo_data_fim.seconds}</p>
         </li>
       </ul>
       <hr />

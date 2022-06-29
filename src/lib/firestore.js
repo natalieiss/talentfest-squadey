@@ -12,12 +12,12 @@ import { app } from "./firebaseConfig";
 
 export const db = getFirestore(app);
 
-export const getPolicy = async () => {
+export const getPolicy = async (userId) => {
   const cardsArray = [];
   const collectionSortedByDate = query(
     collection(db, 'APOLICES'),
     orderBy('apo_data_fim', 'desc'),
-    //where("usu_id" , '==', userId)
+    where("usu_id" , '==',userId)
   );
   try {
     const docSnap = await getDocs(collectionSortedByDate);
