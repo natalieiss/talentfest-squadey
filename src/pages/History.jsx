@@ -8,11 +8,11 @@ import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 import {useState} from "react"
 
-function Historic() {
+function History() {
   const navigate = useNavigate();
   
-  const handleOccurrance = () => {
-    navigate("/Occurrance");
+  const handleOccurrence = () => {
+    navigate("/Occurrence");
   };
   
   const [isModalVisible, setIsmodalVisible] = useState(false);
@@ -24,7 +24,8 @@ function Historic() {
       <Button onClick={handleOccurrance}>Aviso de Sinistro</Button>
       {isModalVisible ? <Modal onClose={()=>{setIsmodalVisible(false)}}>
         <p>Declaro que todas as informações constantes neste formulário para fins de abertura de sinistro, são completas, verdadeiras e corretas em todos os detalhes.Tendo ciência que serão averiguadas e que arcarei com as consequências de afirmações inverídicas.</p></Modal> : null} 
+
     </Container>
   );
 }
-export default Historic;
+export default History;

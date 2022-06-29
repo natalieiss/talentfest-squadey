@@ -1,22 +1,18 @@
 import React from "react";
 import styles from "./style.module.css";
 
-function Select({children}) {
+function Select({ options, onChange, defaultValue, customClass }) {
   return (
-    <section className={styles.SelectSection}>
-      <select className={styles.Selects}>
-        <option value="" selected disabled>
-          Tipo de Ocorrência
+    <section className={styles.selectsSection}>
+      <select className={styles[customClass]} onChange={onChange}>
+        <option value="" selected disabled className={styles[customClass]}>
+          {defaultValue}
         </option>
-        <option className={styles.SelectOption} value="">
-          Colisão
-        </option>
-        <option className={styles.SelectOption} value="">
-          Assistência 24h-Reboque
-        </option>
-        <option className={styles.SelectOption} value="">
-          Furto/Roubo
-        </option>
+        {options.map((option, i) => (
+          <option value={option.value} key={i} className={styles[customClass]}>
+            {option.text}
+          </option>
+        ))}
       </select>
     </section>
   );

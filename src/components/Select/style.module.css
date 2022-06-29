@@ -1,15 +1,15 @@
-.SelectsSection{
-background-color: var(--color-EY-offBlack);
-justify-content: center;
+.selectsSection {
+  background-color: var(--color-EY-offBlack);
+  justify-content: center;
+  font-family: "Inter";
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.Selects{
-background-color: var(--color-EY-offWhite);
-font-family: var(--font-default);
-color: var(--color-EY-offBlack);
-border: none;
+.select-occurrence {
+  background-color: var(--color-EY-offWhite);
+  font-family: var(--font-default);
+  color: var(--color-EY-offBlack);
+  border: none;
 }
-
-/* .SelectOption{
-
-} */
