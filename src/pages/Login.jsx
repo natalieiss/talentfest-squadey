@@ -10,59 +10,60 @@ import Errors from "../components/Errors";
 import { userLogin } from "../lib/authentication";
 
 function Login() {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
-    const [error, setError] = useState();
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState();
 
-    const handleLogin = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     userLogin(email, password)
-        .then(() => {
-        navigate("/History"); }).catch((error) => {
+      .then(() => {
+        navigate("/history");
+      }).catch((error) => {
         const errorCode = error.code;
         if (errorCode === "auth/wrong-password") {
-            setError("Senha incorreta.");
+          setError("Senha incorreta.");
         }
         if (errorCode === "auth/invalid-email") {
-            setError("Email inválido");
+          setError("Email inválido!");
         }
         if (errorCode === "auth/user-not-found") {
-            setError("Usuário não encontrado.");
-        }})
-    ;};
+          setError("Usuário não encontrado.");
+        }
+      })
+      ;
+  };
 
-    return (
-    <Container customClass="centralize">
-        <Logo customClass="logoLogin" />
-        <Form customClass="formLogin">
-            <Input
-            type="email"
-            placeholder="Email"
-            customClass="input"
-            onChange={(e) => setEmail(e.target.value)}
-            />
-            <Input
-            type="password"
-            placeholder="Senha"
-            customClass="input"
-            onChange={(e) => setPassword(e.target.value)}
-            />
-            <div>
-            <Errors type="error" message={error} changeSetError={setError} />
-            </div>
-            <Button
-            type="submit"
-            children="ENTRAR"
-            customClass="button"
-            onClick={handleLogin}
-            />
-            <LinkText href="register" customClass="hiperlink">
-            Crie sua conta
+  return (
+    <>
+      <Logo customClass="logoLogin" />
+      <Form customClass="formLogin">
+        <Input
+          type="email"
+          placeholder="Email"
+          customClass="inputLogin"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input
+          type="password"
+          placeholder="Senha"
+          customClass="inputLogin"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Errors type="error" message={error} changeSetError={setError} />
+        <Button
+          type="submit"
+          children="ENTRAR"
+          customClass="buttonLogin"
+          onClick={handleLogin}
+        />
+        <LinkText href="register" customClass="hiperlink">
+          Crie sua conta
         </LinkText>
-        </Form>
-    </Container>
+      </Form>
+    </>
   );
 }
 export default Login;

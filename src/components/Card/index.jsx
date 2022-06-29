@@ -4,16 +4,16 @@ import styles from "./style.module.css";
 const Card = ({data}) => {
   console.log(data)
   return (
-    <li className={styles.cont}>
-      <p>Dados da Apólice</p>
-      <ul>
+    <li className={styles.container}>
+      <p className={styles.title}>Dados da Apólice</p>
+      <ul className={styles.table}>
         <li>
-          <p>Nº Apólice</p>
-          <p>{data.apo_codigo}</p>
+          <p className={styles.subTitle}>Nº Apólice</p>
+          <p className={styles.text}>{data.apo_codigo}AAAAA</p>
         </li>
         <li>
-          <p>Franquia (R$)</p>
-          <p>{data.apo_preco_franquia}</p>
+          <p className={styles.subTitle}>Franquia (R$)</p>
+          <p className={styles.text}>{data.apo_preco_franquia}AAAA</p>
         </li>
         <li>
           <p>Início de Vigência</p>
@@ -22,27 +22,28 @@ const Card = ({data}) => {
         <li>
           <p>Fim de Vigência</p>
           <p>{data.apo_data_fim.seconds}</p>
+
         </li>
       </ul>
       <hr />
 
-      <p>Dados do Sinistro</p>
-      <ul>
+      <p className={styles.title}>Dados do Sinistro</p>
+      <ul className={styles.table}>
         <li>
-          <p>ID do Sinistro</p>
-          <p>{data.sin_id}</p>
+          <p className={styles.subTitle}>ID do Sinistro</p>
+          <p className={styles.text}>{data.sin_id}AAA</p>
         </li>
         <li>
-          <p>Data do Sinistro</p>
-          <p>{data.sin_data}</p>
+          <p className={styles.subTitle}>Data do Sinistro</p>
+          <p className={styles.text}>{data.sin_data}AAA</p>
         </li>
         <li>
-          <p>Tipo do Sinistro</p>
-          <p>{data.sin_tipo}</p>
+          <p className={styles.subTitle}>Tipo do Sinistro</p>
+          <p className={styles.text}>{data.sin_tipo}AAA</p>
         </li>
         <li>
-          <p>Valor do Sinistro (R$)</p>
-          <p>{data.sin_preco}</p>
+          <p className={styles.subTitle}>Valor do Sinistro (R$)</p>
+          <p className={styles.text}>{data.sin_preco}AAA</p>
         </li>
       </ul>
     </li>
