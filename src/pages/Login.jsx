@@ -20,7 +20,7 @@ const navigate = useNavigate();
     e.preventDefault();
     userLogin(email, password)
         .then(() => {
-        navigate("/Historic"); }).catch((error) => {
+        navigate("/History"); }).catch((error) => {
         const errorCode = error.code;
         if (errorCode === "auth/wrong-password") {
             setError("Senha incorreta.");
