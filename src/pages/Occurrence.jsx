@@ -4,10 +4,10 @@ import Header from "../components/Header";
 import Form from "../components/Form";
 import Select from "../components/Select";
 import Button from "../components/Button";
+import Textarea from '../components/Textarea';
 import Modal from "../components/Modal";
-import ImageUpload from "../components/ImageUpload/ImageUpload";
+import ImageUpload from "../components/ImageUpload";
 import Footer from '../components/Footer';
-import styles from "./occurrence.module.css";
 
 function Occurrence() {
   // const [selectedOption, setSelectedOption] = useState("");
@@ -89,23 +89,21 @@ function Occurrence() {
   return (
     <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />
-      <Form customClass="container-infos-occ">
+      <Form customClass="formOccurrence">
         <Select
-          customClass="select-occurrence"
+          customClass="selectOccurrence"
           options={arrOptions}
           onChange={handleChange}
           defaultValue="Tipos de Sinistro"
         />
         <Select
-          customClass="select-occurrence"
+          customClass="selectOccurrence"
           options={arrVehicles}
           onChange={handleChange}
           defaultValue="Tipos de Veículo"
         />
-        <ImageUpload />
-        <textarea className={styles.occ_description} rows="5" cols="33">
-          Descrição do ocorrido
-        </textarea>
+        <ImageUpload onClick={null} progress={null} />
+        <Textarea customClass="description" rows="5" cols="70" placeholder="Descreva o ocorrido"></Textarea>
         {isModalVisible ?
           <Modal onClose={() => { setIsmodalVisible(false) }}>
             <Button type="button" onClick={() => { setIsmodalVisible(true) }}>Termos e Condições</Button>
@@ -113,7 +111,7 @@ function Occurrence() {
               Declaro que todas as informações constantes neste formulário para fins de abertura de sinistro, são completas, verdadeiras e corretas em todos os detalhes.Tendo ciência que serão averiguadas e que arcarei com as consequências de afirmações inverídicas.
             </p>
           </Modal> : null}
-        <Button customClass="button">Abrir Sinistro</Button>
+        <Button customClass="buttonInternal">Abrir Sinistro</Button>
       </Form>
       <Footer />
     </Container>

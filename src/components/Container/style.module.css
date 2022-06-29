@@ -19,6 +19,12 @@
   row-gap: 20px;
   background-color: var(--color-EY-offBlack);
 }
+.containerSlogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 @media screen and (min-width: 550px) and (max-width: 1000px) {
   .containerHistory {
@@ -33,5 +39,8 @@
   }
   .containerHistory {
     top: 105px;
+  }
+  .containerSlogan {
+    margin-bottom: 100px;
   }
 }

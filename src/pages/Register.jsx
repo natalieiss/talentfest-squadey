@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import Container from "../components/Container";
 import Form from "../components/Form";
 import Input from "../components/Input";
 import Logo from "../components/Logo";
 import Button from "../components/Button";
+import Message from "../components/Message";
 import LinkText from "../components/Link";
 import Errors from "../components/Errors";
 
@@ -61,7 +63,12 @@ function Register() {
   */
   return (
     <>
-      <Logo customClass="logoLogin" />
+      <Container customClass="containerSlogan">
+        <Logo customClass="logoLogin" />
+        <Message customClass="slogan">
+          Crie a sua conta e <br /> venha fazer parte da Seguros Autos !!!
+        </Message>
+      </Container>
       <Form customClass="formLogin">
         <Input
           type="text"

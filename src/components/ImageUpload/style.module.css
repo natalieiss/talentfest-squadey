@@ -1,0 +1,33 @@
+.containerPhoto {
+  height: 70px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.labelPhoto {
+  width: 280px;
+}
+.iconPhoto {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+input[type='file'] {
+  display: none;
+}
+.textPhoto {
+  height: 40px;
+  color: var(--color-EY-yellow);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.textProgress {
+  color: var(--color-EY-offWhite);
+  font-size: 1.125rem;
+}

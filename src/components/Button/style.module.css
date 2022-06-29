@@ -18,24 +18,20 @@
   width: 90%;
 }
 .buttonInternal {
-    margin-right: 7px;
-    padding: 0;
-    width: 92%;
-    max-width: 830px;
-    height: 45px;
-    border-radius: 3px;
-    background-color: var(--color-EY-yellow);
-    color: var(--color-EY-offBlack);
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position:fixed;
-    bottom: 100px;
+  width: 100%;
+  margin: 20px auto;
+  height: 45px;
+  border-radius: 3px;
+  background-color: var(--color-EY-yellow);
+  color: var(--color-EY-offBlack);
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 .logout {
   width: 50px;

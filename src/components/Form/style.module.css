@@ -1,19 +1,32 @@
 .formLogin {
-  max-width: 600px;
+  max-width: 500px;
   width: 90%;
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   row-gap: 20px;
 }
-.container-infos-occ{
+.formOccurrence{
   max-width: 600px;
   width: 90%;
-  border: 1px red solid;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
 }
 
 @media screen and (min-width: 550px) {
   .formLogin {
     row-gap: 30px;
   } 
+}
+
+@media screen and (min-width: 1001px) {
+  .formLogin {
+    margin-top: 70px;
+  }
 }
