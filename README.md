@@ -144,7 +144,8 @@ Além disso, futuramente temos a intenção de modificar o nosso banco de dados 
 - **Protótipos: [Figma](https://www.figma.com/file/Xuz6uKFRIwaeuvmBPlt7nY/EY?node-id=0%3A1)**
 - **HTML5** <img alt="html5" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" />
 - **CSS3** <img alt="css3" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" />    
-- **JavaScript** <img alt="JS" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />    
+- **JavaScript** <img alt="JS" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+- **Slack** <img alt="slack" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original-wordmark.svg" />    
 - **React** <img alt="react" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
 - **JSX** <img alt="jsx" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
 - **Node JS** <img alt="node" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" />     
@@ -185,24 +186,24 @@ Além disso, futuramente temos a intenção de modificar o nosso banco de dados 
         </sub>
       </a>
     </td>
-    <td align="center">
-      <a href="https://github.com/JessikaMirella">
-  <img align="center" alt="Jessika Mirella"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/JessikaMirella"> <br>       
-  <sub>
-          <b>Jessika Mirella</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/natalieiss">
-  <img align="center" alt="Natalie Silva"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/natalieiss"> <br>       
-  <sub>
-          <b>Natalie Silva</b>
-        </sub>
-      </a>
-    </td>
   </tr>
  <tr>
+  <td align="center">
+        <a href="https://github.com/JessikaMirella">
+    <img align="center" alt="Jessika Mirella"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/JessikaMirella"> <br>       
+    <sub>
+            <b>Jessika Mirella</b>
+          </sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/natalieiss">
+    <img align="center" alt="Natalie Silva"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/natalieiss"> <br>       
+    <sub>
+            <b>Natalie Silva</b>
+          </sub>
+        </a>
+    </td>
     <td align="center">
       <a href="https://github.com/moreirathais">
   <img align="center" alt="Thais Moreira"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/moreirathais"> <br>       
