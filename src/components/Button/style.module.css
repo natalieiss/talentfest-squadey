@@ -18,10 +18,8 @@
   width: 90%;
 }
 .buttonInternal {
-  margin-right: 7px;
-  padding: 0;
-  width: 92%;
-  max-width: 830px;
+  width: 100%;
+  margin: 20px auto;
   height: 45px;
   border-radius: 3px;
   background-color: var(--color-EY-yellow);
@@ -34,20 +32,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  position: fixed;
-  bottom: 100px;
 }
-
-.btn-terms-form {
-  font-size: 20px;
-  color: var(--color-EY-offWhite);
-  background-color: var(--color-EY-offBlack);
-  display: flex;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
 .logout {
   width: 50px;
   height: 30px;
