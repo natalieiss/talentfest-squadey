@@ -5,6 +5,7 @@ import Form from "../components/Form";
 import Select from "../components/Select";
 import Button from "../components/Button";
 import Input from "../components/Input";
+import Textarea from '../components/Textarea';
 import Modal from "../components/Modal";
 import Footer from "../components/Footer";
 import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
@@ -130,13 +131,13 @@ function Occurrence() {
       <Header children="AVISO DE SINISTRO" />
       <Form customClass="formOccurence" onSubmit={handleSubmit}>
         <Select
-          customClass="select-occurrence"
+          customClass="selectOccurrence"
           options={arrOptions}
           onChange={handleChange}
           defaultValue="Tipos de Sinistro"
         />
         {/* <Select
-          customClass="select-occurrence"
+          customClass="selectOccurrence"
           options={null}
           onChange={handleChange}
           defaultValue="Tipos de Veículo"
@@ -157,8 +158,11 @@ function Occurrence() {
           value={formValue.sin_descricao}
           onChange={handleInfo}
         >
+            
           Descrição do ocorrido
         </textarea>
+
+        <Textarea customClass="description" rows="5" cols="70" placeholder="Descreva o ocorrido"></Textarea>
         <p className="form-occ-text">Necessita de um carro reserva?</p>
 
         <div onChange={handleInfo}>
@@ -183,6 +187,7 @@ function Occurrence() {
         </div>
 
         <Button
+          type="button"
           customClass="btn-terms-form"
           onClick={() => {
             setIsmodalVisible(true);
