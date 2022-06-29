@@ -10,6 +10,7 @@ import Modal from "../components/Modal";
 import Footer from "../components/Footer";
 import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
 import { app } from "../lib/firebaseConfig";
+import styles from "./style.module.css";
 // import { createOccurrence } from "../lib/firestore";
 
 //1- getDocs de veículos do usuário logado
