@@ -9,11 +9,12 @@ function Header({ children }) {
   const navigate = useNavigate();
 
   const goOut = async () => {
-    await logout().then(() => {
-      console.log("clicou");
-      navigate("/");
-    });
-  };
+
+    await logout()
+      .then(() => {
+        navigate("/");
+      });
+  }
 
   return (
     <header className={styles.mainHeader}>
@@ -24,6 +25,7 @@ function Header({ children }) {
         <FaSignInAlt size="26px" margin-rigth="0px" onClick={goOut} />
       </button>
     </div>
+
     </header>
   );
 }
