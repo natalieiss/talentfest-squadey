@@ -16,8 +16,6 @@
 
 ![ey seguros](./src/assets/readme/logo.jpg)
 
-<h2>EY Seguros</h2>
-
 Projeto desenvolvido no bootcamp de front-end da Laboratoria para o evento denominado Demo Day. Nosso desafio foi proposto pela empresa EY e neste projeto desenvolvemos uma aplicação web na modalidade desktop _responsivo_ (_mobile_) que ofereça aos clientes de uma seguradora de automóveis, uma alternativa fácil e rápida para abertura de sinistros.
 Neste desafio tivemos que criar um banco de dados de back-end do zero e para isso optamos por depositar as coleções do nosso banco de dados no FireStore do Google Firebase.
 
