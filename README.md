@@ -1,123 +1,120 @@
-# Quarto Projeto - Burger Queen (API Client)
+# Talent Fest Laboratoria SP - Desafio EY
 
 ## Índice
 
 - [1. Introdução](#1-Introdução)
 - [2. Resumo do Projeto](#2-Resumo-do-projeto)
 - [3. Futuro do Projeto](#3-Futuro-do-Projeto)
-- [4. Proto Personas](#4-PROTO-PERSONAS)
-- [5.Pesquisa de usuários](#5-Pesquisa-de-usuários)
-- [6.Histórias de usuário](#6-histórias-de-usuário)
-- [7.Fluxogramas](#7-Fluxogramas)
-- [8.Design](#8-Design)
-- [9. Demonstrações da Aplicação Web](#9-Demonstrações-da-Aplicação-Web)
-- [10. Tecnologias e Ferramentas Utilizadas ](#10-Tecnologias-e-Ferramentas-Utilizadas)
-- [11. Desenvolvedoras](#11-desenvolvedoras)
+- [4. Implementando melhorias que facilitem o acesso ao canal de atendimento](#Implementando-melhorias)
+- [5.Fluxogramas](#5-Fluxogramas)
+- [6.Protótipo e testes de usabilidade](#6-protótipo-e-testes-de-usabilidade)
+- [7.Demonstrações da aplicação web](#7-Demonstrações-da-aplicação-web)
+- [8.Tecnologias e Ferramentas Utilizadas](#8-Tecnologias-e-ferramentas-utilizadas)
+- [9. Desenvolvedoras](#9-desenvolvedoras)
 
-## 1. Introdução
+## 1. INTRODUÇÃO
 
-
-![ey seguros](./src/images/Logo.png)
+![ey seguros](./src/assets/readme/logo.jpg)
 
 <h2>EY Seguros</h2>
 
-Projeto desenvolvido no bootcamp de front-end da Laboratoria para o evento denominado Demo Day. Neste projeto desenvolvemos uma aplicação web na modalidade desktop _responsivo_ (_mobile_) que oferecesse aos clientes de uma seguradora uma alternativa fácil e rápida para abertura de sinistros.
+Projeto desenvolvido no bootcamp de front-end da Laboratoria para o evento denominado Demo Day. Nosso desafio foi proposto pela empresa EY e neste projeto desenvolvemos uma aplicação web na modalidade desktop _responsivo_ (_mobile_) que ofereça aos clientes de uma seguradora de automóveis, uma alternativa fácil e rápida para abertura de sinistros.
+Neste desafio tivemos que criar um banco de dados de back-end do zero e para isso optamos por depositar as coleções do nosso banco de dados no FireStore do Google Firebase.
+
 
 ---
-## 2. Resumo do projeto
+## 2. RESUMO DO PROJETO
+
+O aplicativo da EY Seguros oferece uma forma rápida e fácil para gerenciar/criar sinistros. Nele é possível que o cliente acesse seu histórico e efetue a criação de um sinistro. Para que o cliente consiga realizar a abertura de um sinistro é necessário que preencha o formulário, acrescente uma foto do veículo e aceite os termos e condições da seguradora.
+Neste desafio, para iniciar a criação da aplicação, foram fornecidas três histórias de usuário:
+
+## Caminho Feliz (História de Usuário 1)
+![User History 1](./src/assets/readme/historiadeusuario1.jpg)
+
+## Caminho Infeliz 1 (História de Usuário 2)
+![User History 2](./src/assets/readme/historiadeusu%C3%A1rio2.jpg)
+
+## Caminho Infeliz 2 (História de Usuário 3)
+![User History 3](./src/assets/readme/historiadeusuario3.jpg)
+![User History 3.1](./src/assets/readme/historiadeusuario3.1.jpg)
 
 
+Clique [aqui](https://natalieiss.github.io/Terceiro-Projeto-Social-Network) para conferir o resultado da aplicação. 
 
-
-Clique [aqui](https://natalieiss.github.io/Terceiro-Projeto-Social-Network) para converir o resultado da aplicação. 
-
-Se preferir não se cadastrar nesta aplicação web, será possível realizar o _login_ através dos _e-mails_ e senhas previamente cadastrados:
-
-Para acessar o atendimento - Email:
-<p>
-Para acessar cozinha - Email: 
-</p>
+Por se tratar de um MVP na versão V.1.0.0 (versão beta), a função de login e cadastro não estará disponível para o público geral, apenas para os desenvolvedores. Esta função será disponibilizada na versão V.2.0.0.
 
 ---
-## 3. Futuro do Projeto
+## 3. FUTURO DO PROJETO
 
-Para as próximas implementações (v2.0) iremos melhorar a segurança de nossos usuários acrescentando uma Política de Privacidade e Cookies bem como um termo de usuário para melhor atender ao disposto na Lei Geral de Proteção de Dados Pessoais (LGPD). 
-Pensando em um modelo futurista será criado um ambiente exclusivo para cadastro, _login_ e senha do próprio cliente. Desta forma, será possível que o cliente escolha se quer realizar o seu proprio atendimento.
-Esta projeto também será refatorado. Será aprimorada a responsividade para os tablets e iremos acrescenta-la para celulares. Serão implementadas melhorias na estilização através do CSS.
+Para as próximas implementações (v2.0) iremos melhorar a segurança de nossos usuários acrescentando uma Política de Privacidade e Cookies, haverá um termo de usuário que deverá ser aceito no momento do cadastro.
+Esta projeto também será refatorado. Será aprimorada a responsividade para os tablets e celulares. Serão implementadas melhorias na estilização do CSS.
 Também serão implementados novos testes assíncronos e unitários.
 Acrescentaremos também novos recursos para melhorar a acessibilidade na aplicação.
-
-
----
-
-## 4. PROTO PERSONAS
-## Criamos as proto personas da nossa aplicação:
-
-![Proto persona 1](./src/assets/readme/protopersona1.jpg)
-
-![Proto persona 2](./src/assets/readme/protopersona2.jpg)
-
-![Proto persona 3](./src/assets/readme/protopersona3.jpg)
-
-![Proto persona 4](./src/assets/readme/protopersona4.jpg)
+Ainda, pensando em solucionar as chamadas _"dores dos usuários"_ acrescentaremos um canal de atendimento por chat no intuito de atender as expectativas indicadas pelos nossos possíveis usuários durante o preenchimento da nossa pesquisa (https://docs.google.com/forms/d/e/1FAIpQLSeiVY99B4Z_S7eQhYpNtOCx5lCFf1kwg6RUugQ7jcXlfO2I0g/viewform?usp=sf_link).
 
 ---
 
-## 5. PESQUISA DE USUÁRIOS
-## Realizamos uma [pesquisa](https://forms.gle/S95Z9Ug8s7HbAwJGA) para validarmos as proto personas. A pesquisa obteve a participação de 8 pessoas que forneceu os seguintes resultados:
+## 4. IMPLEMENTANDO MELHORIAS QUE FACILITEM O ACESSO AO CANAL DE ATENDIMENTO
 
-![Tematica](./src/assets/readme/graphic1.jpg)
+Tentamos pensar diversas situações que nossos usuários pudessem estar passando no momento da abertura de um sinistro. Imagine você, usuário, localizado no meio de uma BR, sem sinal de wi-fi, precisando solicitar um reboque (que a sua seguradora oferece) para o seu carro que colidiu com outro. O usuário, no momento de um desespero, precisa de uma aplicação que lhe facilite o contato com o seu prestador de serviços independente do meio utilizado. Desta forma, pensando em aprimorar a experiência de nossos usuários bem como facilitar o contato entre prestador de serviços e cliente decidimos disponibilizar, em todo o ambiente da aplicação, os canais de atendimento telefônico da empresa. Para implementar essa funcionalidade, seguimos os passos a seguir mencionados.
+## Desta forma, pensando em aprimorar a experiência do usuário, foi criada uma Proto Persona com as seguintes características:
 
-![Auto Atendimento](./src/assets/readme/graphic2.jpg)
+![Proto persona](./src/assets/readme/canaldeatendimento1.jpg)
 
-![Tempo de Preparo](./src/assets/readme/graphic3.jpg)
+## Realizamos uma breve [pesquisa](https://docs.google.com/forms/d/e/1FAIpQLSeiVY99B4Z_S7eQhYpNtOCx5lCFf1kwg6RUugQ7jcXlfO2I0g/viewform?usp=sf_link) de usuário para validarmos a proto persona. A pesquisa obteve a participação de 20 pessoas e forneceu os seguintes resultados:
 
-![Controle de Pedidos](./src/assets/readme/graphic4.jpg)
+![Implementação](./src/assets/readme/pesquisa1.jpg)
 
-![Sustentabilidade](./src/assets/readme/graphic5.jpg)
+![Entendendo o usuário](./src/assets/readme/pesquisa2.jpg)
 
----
+![Respostas exemplificativa](./src/assets/readme/pesquisa3.jpg)
 
-## 6. HISTORIAS DE USUÁRIO
+![Canais de atendimento](./src/assets/readme/pesquisa4.jpg)
 
-![User History 1](./src/assets/readme/historia1.jpg)
+## Através da pesquisa de usuário realizada foi criada a quarta história de usuário:
 
-![User History 2](./src/assets/readme/historia2.jpg)
-
-![User History 3](./src/assets/readme/historia3.jpg)
-
-![User History 4](./src/assets/readme/historia4.jpg)
+![User History 1](./src/assets/readme/canaldeatendimento2.jpg)
 
 ---
 
-## 7. FLUXOGRAMAS
+## 5. FLUXOGRAMAS
 ## Com base nas historias de usuário nós criamos os fluxogramas para cada uma delas.
+
+<p>Caminho Feliz</p>
 
 ![Fluxograma 1](./src/assets/readme/fluxograma1.jpg)
 
+<p>Caminho Infeliz 1</p>
+
 ![Fluxograma 2](./src/assets/readme/fluxograma2.jpg)
 
-![Fluxograma 3](./src/assets/readme/fluxograma3.jpg)
-
-![Fluxograma 4](./src/assets/readme/fluxograma4.jpg)
-
 ---
-## 8. PROTÓTIPO E TESTES DE USABILIDADE
+## 6. PROTÓTIPO E TESTES DE USABILIDADE
 
+## Visualizamos uma aplicação que refletisse as cores marcantes da EY e tentamos replicar a mesma fonte utilizada por ela em suas aplicações e websites para tornar a experiência mais imersiva.
 
+![Prototipo 1](./src/assets/readme/prototipo.jpg)
+![Paleta de Cores](./src/assets/readme/paletadecores.png)
+
+## Com o auxílio do Figma também criamos um protótipo interativo para ser utilizado nos testes iniciais de usabilidade sendo que obtivemos um feedback bastante positivo.
 
 <p align="center">
   <img width="600" height="337" src="./src/assets/readme/demonstracaoteste.gif"/>
 </p>
 
 ---
-## 9. DEMONSTRAÇÕES DA APLICAÇÃO WEB
+## 7. DEMONSTRAÇÕES DA APLICAÇÃO WEB
 
 <p align="center">Versão Web</p>
 <p align="center">
   <img width="600" height="255" src="./src/assets/readme/web1.gif"/>
   <img width="600" height="255" src="./src/assets/readme/web2.gif"/>
   <img width="600" height="255" src="./src/assets/readme/web3.gif"/>
+</p>
+<p align="center">Versão Mobile</p>
+<p align="center">
+  <img width="600" height="450" src="./src/assets/readme/tablet1.gif"/>
+  <img width="362" height="480" src="./src/assets/readme/tablet2.gif"/>
 </p>
 <p align="center">Versão Tablet</p>
 <p align="center">
@@ -126,7 +123,7 @@ Acrescentaremos também novos recursos para melhorar a acessibilidade na aplica�
 </p>
 
 ---
-## 10. TECNOLOGIAS E FERRAMENTAS UTILIZADAS
+## 8. TECNOLOGIAS E FERRAMENTAS UTILIZADAS
 
 - **Planejamento: [Trello](https://trello.com/b/pDCrPOah/3ey-talentfest)**
 - **Protótipos: [Figma](https://www.figma.com/file/Xuz6uKFRIwaeuvmBPlt7nY/EY?node-id=0%3A1)**
@@ -138,30 +135,64 @@ Acrescentaremos também novos recursos para melhorar a acessibilidade na aplica�
 - **Node JS** <img alt="node" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" />     
 - **Heroku** <img alt="heroku" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original-wordmark.svg" />
 - **Jest** <img alt="jest" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
+- **Firebase** <img alt="firebase" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" />
 - **Git** <img alt="git" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" />
 - **GitHub** & **GitHubProjects** <img alt="github" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" />
 - **Visual Studio Code** <img alt="vscode" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain-wordmark.svg" />
 - **API** 
 
 ---
-## 11. DESENVOLVEDORAS DO PROJETO
+## 9. DESENVOLVEDORAS DO PROJETO
 
 <table>
- <td align="center">
-      <a href="">
-  <img align="center" alt=""  width="100px;"style="border-radius:50px;" src=""/><br>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/adrianatwatanabe">
+  <img align="center" alt="Adriana Watanabe"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/adrianatwatanabe"> <br>       
+  <sub>
+          <b>Adriana Watanabe</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/nannayusuf">
+  <img align="center" alt="Helena Gonçalves"  width="100px;"style="border-radius:50px;" src="https://avatars.githubusercontent.com/nannayusuf"/><br>
              <sub>
-          <b></b>
+          <b>Helena Gonçalves</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Gregisa">
+  <img align="center" alt="Isabela Gregoraci"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/Gregisa"> <br>       
+  <sub>
+          <b>Isabela Gregoraci</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/JessikaMirella">
+  <img align="center" alt="Jessika Mirella"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/JessikaMirella"> <br>       
+  <sub>
+          <b>Jessika Mirella</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/natalieiss">
+  <img align="center" alt="Natalie Silva"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/natalieiss"> <br>       
+  <sub>
+          <b>Natalie Silva</b>
         </sub>
       </a>
     </td>
   </tr>
  <tr>
     <td align="center">
-      <a href="https://github.com/natalieiss">
-  <img align="center" alt="Natalie"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/natalieiss"> <br>       
+      <a href="https://github.com/moreirathais">
+  <img align="center" alt="Thais Moreira"  width="100px;" style="border-radius:50px;" src="https://avatars.githubusercontent.com/moreirathais"> <br>       
   <sub>
-          <b>Natalie Silva</b>
+          <b>Thais Moreira</b>
         </sub>
       </a>
     </td>

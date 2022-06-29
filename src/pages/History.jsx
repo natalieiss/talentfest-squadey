@@ -8,15 +8,15 @@ import { useNavigate } from "react-router-dom";
 
 function Historic() {
   const navigate = useNavigate();
-  
-  const handleOccurrance = () => {
-    navigate("/Occurrance");
+
+  const handleOccurrence = () => {
+    navigate("/Occurrence");
   };
-  
+
   return (
     <Container >
-      <Header customClass="centralize" children="HISTÓRICO"/>
-      <Button onClick={handleOccurrance}>Aviso de Sinistro</Button>
+      <Header customClass="centralize" children="HISTÓRICO" />
+      <Button onClick={handleOccurrence}>Aviso de Sinistro</Button>
     </Container>
   );
 }
