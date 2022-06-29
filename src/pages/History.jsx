@@ -12,29 +12,17 @@ function History() {
   const [policy, setPolicy] = useState([]);
   const [userId, setUserId] = useState();
 
-  const id = `ID-00000324`;
-  const estado = "Solicitação Enviada";
-  const subEstado = "N/A";
-  const preco = 10000;
-  const tipo = "Colisão";
-  const idPolicy = "";
-
-
   const showAllPolicy = useCallback(async () => {
-    console.log(userId)
     if (userId) {
       const allPolicy = await getPolicy(userId);
-      console.log(allPolicy)
       setPolicy(allPolicy);
     }
-  } , [userId])
+  }, [userId])
 
   useEffect(() => {
     authChange(setUserId)
     showAllPolicy();
   }, [showAllPolicy]);
-
-  const [isModalVisible, setIsmodalVisible] = useState(false);
 
   return (
     <Container customClass="containerHistory">
@@ -47,7 +35,7 @@ function History() {
         }
         )}
       </List>
-      <Link href="/occurrence" customClass="historyHiperlink">
+      <Link href="/occurrence" customClass="hiperlinkInternal">
         Aviso de Sinistro
       </Link>
       <Footer />
