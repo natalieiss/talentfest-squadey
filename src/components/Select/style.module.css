@@ -1,12 +1,17 @@
-.selectsSection {
-  background-color: var(--color-EY-offBlack);
-  justify-content: center;
-  text-align: center;
-  font-weight: bold;
-  font-size: 20px;
-}
-.select-occurrence {
+.selectOccurrence {
+  width: 100%;
+  padding: 10px 16px;
   background-color: var(--color-EY-offWhite);
-  color: var(--color-EY-offBlack);
   border: none;
+  border-radius: 3px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-EY-offBlack);
+  background-image: url(../../assets/image/arrow.png);
+  background-position: right 8px center;
+  background-repeat: no-repeat;
+  background-size: auto 25%;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
 }

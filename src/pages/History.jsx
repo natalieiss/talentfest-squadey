@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { getPolicy } from "../lib/firestore";
+import { getOccurrence, getPolicy } from "../lib/firestore";
 import { authChange } from "../lib/authentication";
 import Container from "../components/Container";
 import Header from "../components/Header";
@@ -12,6 +12,7 @@ import Input from "../components/Input";
 
 function History() {
   const [policy, setPolicy] = useState([]);
+  const [occurrence, setOccurrence] = useState([]);
   const [userId, setUserId] = useState();
 
   const [isModalVisible, setIsmodalVisible] = useState(false);
@@ -30,8 +31,10 @@ function History() {
     console.log(userId);
     if (userId) {
       const allPolicy = await getPolicy(userId);
-      console.log(allPolicy);
+      const allOccurrence = await getOccurrence(userId);
+      console.log(allPolicy, allOccurrence);
       setPolicy(allPolicy);
+      setOccurrence(allOccurrence)
     }
   }, [userId]);
 
