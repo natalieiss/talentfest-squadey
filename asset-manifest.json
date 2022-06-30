@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/talentfest-squadey/static/css/main.5eb62793.css",
-    "main.js": "/talentfest-squadey/static/js/main.c51269ef.js",
-    "static/media/logo_EY_white.svg": "/talentfest-squadey/static/media/logo_EY_white.fedd1efa531311f9ebe7b671eb7617b6.svg",
-    "index.html": "/talentfest-squadey/index.html",
-    "main.5eb62793.css.map": "/talentfest-squadey/static/css/main.5eb62793.css.map",
-    "main.c51269ef.js.map": "/talentfest-squadey/static/js/main.c51269ef.js.map"
+    "main.css": "/static/css/main.a46f4184.css",
+    "main.js": "/static/js/main.14783fbb.js",
+    "static/media/logo_EY_white.svg": "/static/media/logo_EY_white.fedd1efa531311f9ebe7b671eb7617b6.svg",
+    "index.html": "/index.html",
+    "main.a46f4184.css.map": "/static/css/main.a46f4184.css.map",
+    "main.14783fbb.js.map": "/static/js/main.14783fbb.js.map"
   },
   "entrypoints": [
-    "static/css/main.5eb62793.css",
-    "static/js/main.c51269ef.js"
+    "static/css/main.a46f4184.css",
+    "static/js/main.14783fbb.js"
   ]
 }
