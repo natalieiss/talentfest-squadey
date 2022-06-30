@@ -92,8 +92,7 @@ Tentamos pensar diversas situações que nossos usuários pudessem estar passand
 
 ## Visualizamos uma aplicação que refletisse as cores marcantes da EY e tentamos replicar a mesma fonte utilizada por ela em suas aplicações e websites para tornar a experiência mais imersiva.
 
-![Prototipo 1](./src/assets/readme/prototipotela1.jpg)
-![Prototipo 2](./src/assets/readme/prototipotela2.jpg)
+![Prototipo 1](./src/assets/readme/telasprototipo.jpg)
 
 ## Com o auxílio do Figma também criamos um protótipo interativo para ser utilizado nos testes iniciais de usabilidade sendo que obtivemos um feedback bastante positivo.
 
