@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import Select from "../components/Select";
 import Button from "../components/Button";
 import Input from "../components/Input";
-import Textarea from '../components/Textarea';
 import Modal from "../components/Modal";
 import Footer from "../components/Footer";
 import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
@@ -12,15 +11,13 @@ import { app } from "../lib/firebaseConfig";
 import { createOccurrence } from "../lib/firestore";
 
 function Occurrence() {
-  const [selectedOption, setSelectedOption] = useState("");
   const [formValue, setFormValue] = useState({ 
     apo_codigo:"",
-    sin_tipo:"",
-    vei_tipo_veiculo:"",
+    sin_tipo:"", 
+    vei_tipo_veiculo:"",   
     sin_descricao: "", 
     vei_reserva:false,
     vei_imagem: "",
-
 });
   const [isModalVisible, setIsmodalVisible] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -71,14 +68,26 @@ function Occurrence() {
     });
   };
 
-  const handleChange = (e) => {
-    console.log(e.target.value)
-    return setSelectedOption(() => {
-      const selectsInfos = { ...selectedOption };
-      selectsInfos[e.target.options] = e.target.value;
-      return selectsInfos;
-    });
-  };
+  // const handleOptions = (e) => {
+  //   console.log(e.target.value)
+  //   return setFormValue(() => {
+  //     const selectsInfos = { ...formValue};
+  //     selectsInfos[e.target.options] = e.target.value;
+  //     console.log(selectsInfos)
+  //     return selectsInfos;
+  //   });
+  // };
+
+  // const handleChange = (e) => {
+  //   console.log(e.target.value)
+  //   return setSelectedVeichules(() => {
+  //     const selectsInfos = selectedVeichules;
+  //     selectsInfos[e.target.options] = e.target.value;
+  //     console.log(selectsInfos)
+  //     return selectsInfos;
+  //   });
+  // };
+
   const arrOptions = [
     {
       text: "Assistência 24h-Reboque",
@@ -132,13 +141,17 @@ function Occurrence() {
         <Select
           customClass="selectOccurrence"
           options={arrOptions}
-          onChange={handleChange}
+          value={formValue.sin_tipo}
+          name="sin_tipo"
+          onChange={handleInfo}
           defaultValue="Tipos de Sinistro"
         />
         <Select
-          customClass="select-occurrence"
+          customClass="selectOccurrence"
           options={arrVeichules}
-          onChange={handleChange}
+          value={formValue.vei_tipo_veiculo}
+          name="vei_tipo_veiculo"
+          onChange={handleInfo}
           defaultValue="Tipos de Veículo"
         />
         <div className="App">
@@ -162,8 +175,6 @@ function Occurrence() {
             
           Descrição do ocorrido
         </textarea>
-
-        <Textarea customClass="description" rows="5" cols="70" placeholder="Descreva o ocorrido"></Textarea>
         <p className="form-occ-text">Necessita de um carro reserva?</p>
 
         <div onChange={handleInfo}>
