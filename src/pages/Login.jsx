@@ -42,7 +42,7 @@ function Login() {
       <Container customClass="containerSlogan">
         <Logo customClass="logoLogin" />
         <Message customClass="slogan">
-          Seguro Autos, <br />você sempre protegida 24 horas !!!
+          Seguro Auto, <br />Proteção 24 horas!
         </Message>
       </Container>
       <Form customClass="formLogin">

@@ -18,7 +18,7 @@
   width: 90%;
 }
 .buttonInternal {
-  width: 100%;
+  width: 90%;
   margin: 20px auto;
   height: 45px;
   border-radius: 3px;
@@ -33,6 +33,17 @@
   align-items: center;
   cursor: pointer;
 }
+.buttonSendOcurrence {
+  height: 45px;
+  padding: 50px;
+  background-color: var(--color-EY-yellow);
+  color: var(--color-EY-offBlack);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
 .logout {
   width: 50px;
   height: 30px;
@@ -45,6 +56,10 @@
 .buttonLogin:active,
 .logout:active {
   transform: translateY(3px);
+}
+.payment {
+  color: var(--color-EY-offBlack);
+  font-weight: 600;
 }
 
 @media screen and (min-width: 550px) and (max-width: 1000px) {

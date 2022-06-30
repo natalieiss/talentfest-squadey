@@ -8,8 +8,8 @@
   column-gap: 30px;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 90px;
-  margin-bottom: 180px;
+  margin-top: 70px;
+  margin-bottom: 100px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -26,9 +26,17 @@
   border-radius: 20px;
 }
 
-@media screen and (min-width: 550px) and (max-width: 1000px) {
+@media screen and (min-width: 550px) and (max-width: 880px) {
   .historyList {
-    margin-top: 100px;
+    margin-top: 65px;
+    margin-bottom: 0px;
+  } 
+}
+
+@media screen and (min-width: 881px) and (max-width: 1000px)  {
+  .historyList {
+    margin-top: 65px;
+    margin-bottom: 0px;
   } 
 }
 

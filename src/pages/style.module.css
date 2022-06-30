@@ -10,3 +10,6 @@ textarea {
   text-align: justify;
   font-size: 1.125rem;
 }
+.description::placeholder {
+  color: var(--color-EY-offBlack);
+}
