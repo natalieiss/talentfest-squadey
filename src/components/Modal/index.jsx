@@ -5,8 +5,10 @@ const Modal = ({ children, onClose = () => { } }) => {
 
   return (
     <div className={styles.DivModal}>
-      <div className={styles.DivConteiner}>
-        <Button className={styles.Close} onClick={onClose} type="button" children="Fechar"/>
+      <div className={styles.DivContainer}>
+        <Button customClass="modal-btn" onClick={onClose} type="button">
+          Fechar
+        </Button>
         {children}
       </div>
     </div>

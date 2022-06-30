@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Container from "../components/Container";
 import Form from "../components/Form";
 import Logo from "../components/Logo";
+import Message from "../components/Message";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Errors from "../components/Errors";
+import Footer from "../components/Footer";
 import { userLogin } from "../lib/authentication";
-import { MdEmail } from "react-icons/md";
 
 function Login() {
   const navigate = useNavigate();
@@ -37,7 +39,12 @@ function Login() {
 
   return (
     <>
-      <Logo customClass="logoLogin" />
+      <Container customClass="containerSlogan">
+        <Logo customClass="logoLogin" />
+        <Message customClass="slogan">
+          Seguro Autos, <br />você sempre protegida 24 horas !!!
+        </Message>
+      </Container>
       <Form customClass="formLogin">
         <Input
           type="email"
@@ -59,6 +66,7 @@ function Login() {
           onClick={handleLogin}
         />
       </Form>
+      <Footer />
     </>
   );
 }
