@@ -139,11 +139,11 @@ function Occurrence() {
 
 
         <textarea
-          customClass="occ_sin_descricao"
+          className="occ_sin_descricao"
           rows="5"
           cols="33"
           name="sin_descricao"
-          maxlength="154"
+          maxLength="154"
           value={formValue.sin_descricao}
           onChange={handleChange}
         ></textarea>
