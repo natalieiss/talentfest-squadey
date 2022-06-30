@@ -116,7 +116,7 @@ function Occurrence() {
         </form>
 
         <textarea
-          className="occ_sin_descricao"
+          className={styles.description}
           rows="5"
           cols="33"
           name="sin_descricao"
