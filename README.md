@@ -8,11 +8,9 @@
 - [4. Implementando melhorias que facilitem o acesso ao canal de atendimento](#Implementando-melhorias)
 - [5.Fluxogramas](#5-Fluxogramas)
 - [6.Protótipo e testes de usabilidade](#6-protótipo-e-testes-de-usabilidade)
-- [7.Demonstrações da aplicação web](#7-Demonstrações-da-aplicação-web)
-- [8.Testes Unitários e Assíncronos](#8-Testes-unitários-e-assíncronos)
-- [9. Aprendizados](#9-Aprendizados)
-- [10.Tecnologias e Ferramentas Utilizadas](#10-Tecnologias-e-ferramentas-utilizadas)
-- [11. Desenvolvedoras](#11-desenvolvedoras)
+- [7. Aprendizados](#9-Aprendizados)
+- [8.Tecnologias e Ferramentas Utilizadas](#10-Tecnologias-e-ferramentas-utilizadas)
+- [9. Desenvolvedoras](#11-desenvolvedoras)
 
 ## 1. INTRODUÇÃO
 
@@ -102,34 +100,9 @@ Tentamos pensar diversas situações que nossos usuários pudessem estar passand
 <p align="center">
   <img width="600" height="337" src="./src/assets/readme/prototipoteste.gif"/>
 </p>
-
 ---
-## 7. DEMONSTRAÇÕES DA APLICAÇÃO WEB
 
-<p align="center">Versão Web</p>
-<p align="center">
-  <img width="600" height="255" src="./src/assets/readme/web1.gif"/>
-  <img width="600" height="255" src="./src/assets/readme/web2.gif"/>
-  <img width="600" height="255" src="./src/assets/readme/web3.gif"/>
-</p>
-<p align="center">Versão Mobile</p>
-<p align="center">
-  <img width="600" height="450" src="./src/assets/readme/tablet1.gif"/>
-  <img width="362" height="480" src="./src/assets/readme/tablet2.gif"/>
-</p>
-<p align="center">Versão Tablet</p>
-<p align="center">
-  <img width="600" height="450" src="./src/assets/readme/tablet1.gif"/>
-  <img width="362" height="480" src="./src/assets/readme/tablet2.gif"/>
-</p>
-
----
-## 8. TESTES UNITÁRIOS E ASSÍNCRONOS
-
-
-
----
-## 9. APRENDIZADOS
+## 7. APRENDIZADOS
 
 Foram quatro dias de trabalho bastante intensos, enriquecemos nossa experiência como desenvolvedoras tanto no campo técnico quanto sócio emocional.  Podemos ressaltar como pontos chave, a nossa organização como Squad, a nossa definição e cumprimento dos acordos formalizados como equipe os quais foram praticados do início ao fim por todas as integrantes e mantivemos uma excelente comunicação durante todo o momento. Todo o combinado e integração foi realizado em prol da fluidez, empatia e apoio mútuo.
 
@@ -138,7 +111,7 @@ Foram quatro dias de trabalho bastante intensos, enriquecemos nossa experiência
 Além disso, futuramente temos a intenção de modificar o nosso banco de dados tendo-se em vista que o firebase, apesar de fornecer uma segurança padrão aos usuários, possui funcionalidades limitadas para criação das coleções. 
 
 ---
-## 10. TECNOLOGIAS E FERRAMENTAS UTILIZADAS
+## 8. TECNOLOGIAS E FERRAMENTAS UTILIZADAS
 
 - **Planejamento: [Trello](https://trello.com/b/pDCrPOah/3ey-talentfest)**
 - **Protótipos: [Figma](https://www.figma.com/file/Xuz6uKFRIwaeuvmBPlt7nY/EY?node-id=0%3A1)**
@@ -156,7 +129,7 @@ Além disso, futuramente temos a intenção de modificar o nosso banco de dados 
 - **Visual Studio Code** <img alt="vscode" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain-wordmark.svg" />
 
 ---
-## 11. DESENVOLVEDORAS DO PROJETO
+## 9. DESENVOLVEDORAS DO PROJETO
 
 <table>
   <tr>
