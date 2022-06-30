@@ -5,8 +5,8 @@ import Button from "../Button";
 
 const Card = ({ data, handleClick }) => {
   const navigate = useNavigate()
-  const handleOccurrence = () => {
-    data.apo_status ? navigate("/occurrence") : navigate("/history")
+  const handleOccurrence= ()=>{
+   data.apo_status ? navigate("/occurrence") : navigate("/history") 
   }
 
   return (

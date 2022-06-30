@@ -108,11 +108,11 @@ function Occurrence() {
           <p>Enviando {progress}%</p>
         </Container>
         <textarea
-          className={styles.description}
+          className="occ_sin_descricao"
           rows="5"
           cols="33"
           name="sin_descricao"
-          maxlength="154"
+          maxLength="154"
           value={formValue.sin_descricao}
           onChange={handleChange}
           placeholder="Descreva o ocorrido"

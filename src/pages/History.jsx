@@ -47,7 +47,7 @@ function History() {
         }
       })
     );
-    setIsmodalVisible(false)
+    setIsmodalVisible(false);
   };
 
   return (
@@ -91,14 +91,17 @@ function History() {
 
           <Input type="radio" value="Boleto Bancário" />
           <p>Boleto Bancário</p>
-          <div className="">
+          <div>
             <p>
               A quitação do débito será realizada após a confirmação do
               pagamento do boleto pelo nosso banco, o que pode levar até 1 ou 2
               dias úteis
             </p>
           </div>
-          <Button onClick={handlePayment} customClass="buttonInternal"> Efetuar Pagamento </Button>
+          <Button onClick={handlePayment} customClass="buttonInternal">
+            {" "}
+            Efetuar Pagamento{" "}
+          </Button>
         </Modal>
       )}
     </>
