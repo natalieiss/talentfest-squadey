@@ -65,8 +65,17 @@ margin-bottom: 5px;
   transform: translateY(3px);
 }
 .payment {
+  color: var(--color-EY-offWhite);
+  background-color: rgb(255, 69, 69);
+  font-weight: 600;
+  padding: 10px 0;
+}
+.buttonTerms {
+  background: var(--color-EY-yellow);
   color: var(--color-EY-offBlack);
   font-weight: 600;
+  padding: 5px 20px;
+  margin: 10px 0 50px 0;
 }
 
 @media screen and (min-width: 550px) and (max-width: 1000px) {

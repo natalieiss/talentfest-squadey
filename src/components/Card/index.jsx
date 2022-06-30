@@ -39,7 +39,7 @@ const Card = ({ data, handleClick }) => {
                 <Button onClick={handleClick} customClass="payment">
                   Pendente - Clique aqui pra regularizar
                 </Button>
-                <p>Atualize o pagamento antes de solicitar o Aviso de Sinistro.</p>
+                {/* <p className={styles.noPayment}>Atualize o pagamento antes de solicitar o Aviso de Sinistro.</p> */}
               </>
             )}
           </li>
