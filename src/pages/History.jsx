@@ -12,20 +12,13 @@ import Input from "../components/Input";
 
 function History() {
   const [policy, setPolicy] = useState([]);
-  const [occurrence, setOccurrence] = useState([]);
+  const [, setOccurrence] = useState([]);
   const [userId, setUserId] = useState();
-
   const [isModalVisible, setIsmodalVisible] = useState(false);
+
   const handleClick = () => {
     setIsmodalVisible(true);
   };
-
-  const id = `ID-00000324`;
-  const estado = "Solicitação Enviada";
-  const subEstado = "N/A";
-  const preco = 10000;
-  const tipo = "Colisão";
-  const idPolicy = "";
 
   const showAllPolicy = useCallback(async () => {
     console.log(userId);
@@ -73,7 +66,6 @@ function History() {
             );
           })}
         </List>
-
         <Footer />
       </Container>
       {isModalVisible && (
@@ -106,7 +98,7 @@ function History() {
               dias úteis
             </p>
           </div>
-          <Button onClick={handlePayment} customClass="button">
+          <Button onClick={handlePayment} customClass="buttonInternal">
             {" "}
             Efetuar Pagamento{" "}
           </Button>

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
 import { app } from "../lib/firebaseConfig";
-import { createOccurrence, getOccurrence } from "../lib/firestore";
-import { authChange } from "../lib/authentication";
+import { createOccurrence } from "../lib/firestore";
 import { useNavigate } from "react-router-dom";
 import Container from "../components/Container";
 import Header from "../components/Header";
@@ -33,7 +32,6 @@ function Occurrence() {
     const value = e.target.value;
     setFormValue({ ...formValue, [name]: value });
   };
-
 
   const formHandler = (e) => {
     e.preventDefault();
@@ -68,24 +66,24 @@ function Occurrence() {
     );
   };
 
- async function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     console.log(formValue)
-    try{
+    try {
       await createOccurrence(formValue, "apooIDfgvbfgbnnbgnn")
       console.log("Dados enviados")
-       navigate("/history")
+      navigate("/history")
     }
-    catch(error){
+    catch (error) {
       console.log(error)
     }
-    
- }
+
+  }
 
   return (
     <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />
-      <Container className="subContainerOccurrence" >
+      <Container customClass="subContainerOccurrence" >
         <Select
           options={["Assistência 24h-Reboque", "Colisão", "Furto/Roubo"]}
           name="sin_tipo"
@@ -117,6 +115,7 @@ function Occurrence() {
           maxLength="154"
           value={formValue.sin_descricao}
           onChange={handleChange}
+          placeholder="Descreva o ocorrido"
         ></textarea>
         <Container customClass="containerRadio">
           <p className={styles.textRadio}>Necessita de um carro reserva?</p>

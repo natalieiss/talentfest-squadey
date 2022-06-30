@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./style.module.css";
 import Button from "../Button";
-import Modal from "../Modal";
 
-const Card = ({ data, handlePayment, handleClick }) => {
+const Card = ({ data, handleClick }) => {
   const navigate = useNavigate()
   const handleOccurrence= ()=>{
    data.apo_status ? navigate("/occurrence") : navigate("/history") 
@@ -36,9 +35,12 @@ const Card = ({ data, handlePayment, handleClick }) => {
             {data.apo_status ? (
               <p className={styles.text}>Pago</p>
             ) : (
-              <Button onClick={handleClick}>
-                Pendente - Clique aqui pra regularizar
-              </Button>
+              <>
+                <Button onClick={handleClick} customClass="payment">
+                  Pendente - Clique aqui pra regularizar
+                </Button>
+                <p>Atualize o pagamento antes de solicitar o Aviso de Sinistro.</p>
+              </>
             )}
           </li>
         </ul>
@@ -59,7 +61,7 @@ const Card = ({ data, handlePayment, handleClick }) => {
             <p className={styles.text}>{data.sin_tipo}</p>
           </li>
           <li>
-            <p className={styles.subTitle}>Descrição do Sinistro (R$)</p>
+            <p className={styles.subTitle}>Estado e Sub-estado</p>
             <p className={styles.text}>{data.sin_descricao}</p>
           </li>
         </ul>
