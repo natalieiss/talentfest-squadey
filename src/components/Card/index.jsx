@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./style.module.css";
 import Button from "../Button";
 import Modal from "../Modal";
-import { useNavigate } from "react-router-dom";
 
 const Card = ({ data, handlePayment, handleClick }) => {
   const navigate = useNavigate()
@@ -65,8 +65,8 @@ const Card = ({ data, handlePayment, handleClick }) => {
         </ul>
       </li>
       <Button onClick={handleOccurrence} customClass="button">
-          Aviso de Sinistro
-        </Button>
+        Aviso de Sinistro
+      </Button>
     </>
   );
 };
