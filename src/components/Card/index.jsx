@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import Button from "../Button";
-import Modal from '../Modal';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./style.module.css";
+import Button from "../Button";
+import Modal from "../Modal";
 
-const Card = ({ data }) => {
-  const [, setIsmodalVisible] = useState(false);
-  const handleClick = () => {
-    setIsmodalVisible(true);
+const Card = ({ data, handlePayment, handleClick }) => {
+  const navigate = useNavigate()
+  const handleOccurrence= ()=>{
+   {data.apo_status ? navigate("/occurrence") : navigate("/history") } 
   }
 
   return (
@@ -32,7 +33,13 @@ const Card = ({ data }) => {
           </li>
           <li>
             <p className={styles.subTitle}>Status do Pagamento</p>
-            {data.apo_status ? <p className={styles.text}>Pago</p> : <Button onClick={handleClick}>Pendente - Clique aqui pra regularizar</Button>}
+            {data.apo_status ? (
+              <p className={styles.text}>Pago</p>
+            ) : (
+              <Button onClick={handleClick}>
+                Pendente - Clique aqui pra regularizar
+              </Button>
+            )}
           </li>
         </ul>
         <hr />
@@ -52,15 +59,14 @@ const Card = ({ data }) => {
             <p className={styles.text}>{data.sin_tipo}</p>
           </li>
           <li>
-            <p className={styles.subTitle}>Valor do Sinistro (R$)</p>
-            <p className={styles.text}>{data.sin_preco}</p>
+            <p className={styles.subTitle}>Descrição do Sinistro (R$)</p>
+            <p className={styles.text}>{data.sin_descricao}</p>
           </li>
         </ul>
       </li>
-      <Modal>
-        pagamento
-        <Button> pagar </Button>
-      </Modal>
+      <Button onClick={handleOccurrence} customClass="button">
+        Aviso de Sinistro
+      </Button>
     </>
   );
 };

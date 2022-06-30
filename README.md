@@ -46,7 +46,7 @@ Por se tratar de um MVP na versão V.1.0.0 (versão beta), a função de login e
 ---
 ## 3. FUTURO DO PROJETO
 
-Para as próximas implementações (v2.0) iremos melhorar a segurança de nossos usuários acrescentando uma Política de Privacidade e Cookies, haverá um termo de usuário que deverá ser aceito no momento do cadastro.
+Para as próximas implementações (v2.0) iremos melhorar a segurança de nossos usuários acrescentando uma Política de Privacidade e Cookies, haverá um termo de usuário que deverá ser aceito no momento do cadastro afim de atender as determinações legais contidas na Lei Geral de Proteção de Dados Pessoais(LGPD).
 Esta projeto também será refatorado. Será aprimorada a responsividade para os tablets e celulares. Serão implementadas melhorias na estilização do CSS.
 Apesar das cores disponibilizadas pela EY para padronização da aplicação já serem acessíveis para daltônicos, acreditamos que podemos melhorar a experiência desses usuários oferecendo a eles um botão na parte inferior direita das páginas que possibilitará a troca automática das cores utilizadas na aplicação para um melhor contraste. Pretendemos implementar essa funcionalidade já na proxima versão.
 Também serão implementados novos testes assíncronos e unitários.
@@ -79,13 +79,13 @@ Tentamos pensar diversas situações que nossos usuários pudessem estar passand
 ---
 
 ## 5. FLUXOGRAMAS
-## Com base nas historias de usuário nós criamos os fluxogramas para cada uma delas.
+## Com base nas historias de usuário nós criamos os seguintes fluxogramas.
 
-<p>Caminho Feliz</p>
+<p></p>
 
 ![Fluxograma 1](./src/assets/readme/fluxograma1.jpg)
 
-<p>Caminho Infeliz 1</p>
+<p></p>
 
 ![Fluxograma 2](./src/assets/readme/fluxograma2.jpg)
 
@@ -131,7 +131,7 @@ Tentamos pensar diversas situações que nossos usuários pudessem estar passand
 ---
 ## 9. APRENDIZADOS
 
-Foram quatro dias de trabalho bastante intensos, enriquecemos nossa experiência como desenvolvedoras tanto no campo técnico quanto sócio emocional.  Podemos ressaltar como pontos chave, a nossa organização como Squad, a nossa definição e cumprimento dos acordos formalizados como equipe os quais foram cumpridos do início ao fim por todas as integrantes e mantivemos uma excelente comunicação durante todo o momento. Todo o combinado e integração foi realizado em prol da fluidez, empatia e apoio mútuo.
+Foram quatro dias de trabalho bastante intensos, enriquecemos nossa experiência como desenvolvedoras tanto no campo técnico quanto sócio emocional.  Podemos ressaltar como pontos chave, a nossa organização como Squad, a nossa definição e cumprimento dos acordos formalizados como equipe os quais foram praticados do início ao fim por todas as integrantes e mantivemos uma excelente comunicação durante todo o momento. Todo o combinado e integração foi realizado em prol da fluidez, empatia e apoio mútuo.
 
 ![Acordo](./src/assets/readme/acordo.jpg)
 
@@ -149,13 +149,11 @@ Além disso, futuramente temos a intenção de modificar o nosso banco de dados 
 - **React** <img alt="react" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
 - **JSX** <img alt="jsx" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
 - **Node JS** <img alt="node" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" />     
-- **Heroku** <img alt="heroku" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original-wordmark.svg" />
 - **Jest** <img alt="jest" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
 - **Firebase** <img alt="firebase" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" />
 - **Git** <img alt="git" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" />
 - **GitHub** & **GitHubProjects** <img alt="github" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" />
 - **Visual Studio Code** <img alt="vscode" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain-wordmark.svg" />
-- **API** 
 
 ---
 ## 11. DESENVOLVEDORAS DO PROJETO

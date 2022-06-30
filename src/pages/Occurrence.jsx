@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
 import { app } from "../lib/firebaseConfig";
-import { createOccurrence } from "../lib/firestore";
+import { createOccurrence, getOccurrence } from "../lib/firestore";
+import { authChange } from "../lib/authentication";
+import { useNavigate } from "react-router-dom";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Select from "../components/Select";
@@ -13,6 +15,7 @@ import styles from "./style.module.css";
 
 function Occurrence() {
   const storage = getStorage(app);
+  const navigate = useNavigate();
   const [isModalVisible, setIsmodalVisible] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -65,6 +68,20 @@ function Occurrence() {
     );
   };
 
+ async function handleSubmit(e) {
+    e.preventDefault();
+    console.log(formValue)
+    try{
+      await createOccurrence(formValue, "apooIDfgvbfgbnnbgnn")
+      console.log("Dados enviados")
+       navigate("/history")
+    }
+    catch(error){
+      console.log(error)
+    }
+    
+ }
+
   return (
     <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />
@@ -78,7 +95,7 @@ function Occurrence() {
         />
         <Select
           options={["SUV", "Ônibus"]}
-          name="vei_tipo_veiculos"
+          name="vei_tipo_veiculo"
           onChange={handleChange}
           textDefault="Tipos de Veículo"
           customClass="selectOccurrence"
@@ -152,7 +169,7 @@ function Occurrence() {
         ) : null
         }
 
-        <Button type="button" customClass="buttonInternal" onClick={null} >
+        <Button type="button" customClass="button" onClick={handleSubmit} >
           Abrir Sinistro
         </Button >
 
@@ -163,3 +180,5 @@ function Occurrence() {
 }
 
 export default Occurrence;
+
+

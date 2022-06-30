@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { logout } from "../../lib/authentication";
 import { FaSignInAlt } from "react-icons/fa";
 import Logo from "../Logo";
-import Button from '../Button';
 import styles from "./style.module.css";
+import Button from "../Button"
+
 
 function Header({ children }) {
   const navigate = useNavigate();
