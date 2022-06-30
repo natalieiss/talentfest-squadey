@@ -52,6 +52,19 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+.subContainerOccurrence::-webkit-scrollbar {
+  width: 8px;
+}
+.subContainerOccurrence::-webkit-scrollbar-track {
+  background: var(--color-EY-offBlack);
+  border-radius: 10px;
+}
+.subContainerOccurrence::-webkit-scrollbar-thumb {
+  background: var(--color-EY-gray01);
+  border-radius: 20px;
+}
+
 .containerRadio {
   width: 100%;
   display: flex;
