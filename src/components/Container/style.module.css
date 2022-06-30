@@ -18,6 +18,7 @@
   align-items: center;
   row-gap: 20px;
   background-color: var(--color-EY-offBlack);
+  padding-top: 40px;
 }
 .containerOccurrence {
   width: 100%;
@@ -38,11 +39,18 @@
 .subContainerOccurrence{
   max-width: 600px;
   width: 90%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   row-gap: 20px;
+  column-gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 70px;
+  margin-bottom: 100px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .containerRadio {
   width: 100%;
