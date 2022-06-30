@@ -66,6 +66,49 @@ function Occurrence() {
     );
   };
 
+  //const handleInfo = (e) => {
+    //console.log(e.target.value);
+      //setFormValue(() => {
+      //const info = { ...formValue };
+      //info[e.target.name] = e.target.value;
+      //console.log(info);
+      //return info;
+   // });
+  //};
+
+  // const handleOptions = (e) => {
+  //   console.log(e.target.value)
+  //   return setFormValue(() => {
+  //     const selectsInfos = { ...formValue};
+  //     selectsInfos[e.target.options] = e.target.value;
+  //     console.log(selectsInfos)
+  //     return selectsInfos;
+  //   });
+  // };
+
+  // const handleChange = (e) => {
+  //   console.log(e.target.value)
+  //   return setSelectedVeichules(() => {
+  //     const selectsInfos = selectedVeichules;
+  //     selectsInfos[e.target.options] = e.target.value;
+  //     console.log(selectsInfos)
+  //     return selectsInfos;
+  //   });
+  // };
+
+  //function handleSubmit(e) {
+    //e.preventDefault();
+    //console.log(formValue)
+      //createOccurrence()
+      //.then((data) => {
+       // data.json()
+      //})
+      //.catch((error) => {
+      // console.log(error)
+     // });
+ // }
+
+
   return (
     <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />
@@ -163,3 +206,5 @@ function Occurrence() {
 }
 
 export default Occurrence;
+
+
