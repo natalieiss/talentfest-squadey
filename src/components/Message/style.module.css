@@ -1,0 +1,29 @@
+.slogan {
+  font-size: 0.875rem;
+  text-align: center;
+  color: var(--color-EY-yellow);
+}
+
+@media screen and (min-width: 380px) and (max-width: 435px) {
+  .slogan {
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (min-width: 436px) and (max-width: 465px) {
+  .slogan {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 466px) and (max-width: 555px) {
+  .slogan {
+    font-size: 1.375rem;
+  }
+}
+
+@media screen and (min-width: 556px) {
+  .slogan {
+    font-size: 1.5rem;
+  }
+}

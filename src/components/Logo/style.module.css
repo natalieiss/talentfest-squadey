@@ -1,9 +1,11 @@
 .logoLogin {
+  margin-left: 40px;
   max-width: 600px;
   height: 120px;
+  margin-bottom: 30px;
 }
 .logo {
-  height: 38px;
+  height: 35px;
 }
 
 @media screen and (min-width: 550px) and (max-width: 1000px) {
@@ -11,16 +13,16 @@
     height: 130px;
   } 
   .logo {
-    height: 48px;
+    height: 35px;
   }
 }
 
 @media screen and (min-width: 1001px) {
   .logoLogin {
     height: 200px;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
   }
   .logo {
-    height: 60px;
+    height: 40px;
   } 
 }

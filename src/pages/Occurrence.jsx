@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
+import { app } from "../lib/firebaseConfig";
+import { createOccurrence } from "../lib/firestore";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Select from "../components/Select";
@@ -6,9 +9,7 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import Modal from "../components/Modal";
 import Footer from "../components/Footer";
-import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
-import { app } from "../lib/firebaseConfig";
-import { createOccurrence } from "../lib/firestore";
+import styles from "./style.module.css";
 
 function Occurrence() {
   const storage = getStorage(app);
@@ -28,8 +29,6 @@ function Occurrence() {
     const name = e.target.name;
     const value = e.target.value;
     setFormValue({ ...formValue, [name]: value });
-    console.log(name);
-    console.log(value);
   };
 
 
@@ -69,7 +68,7 @@ function Occurrence() {
   return (
     <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />
-      <div className="container-infos-occ" >
+      <Container className="subContainerOccurrence" >
         <Select
           options={["Assistência 24h-Reboque", "Colisão", "Furto/Roubo"]}
           name="sin_tipo"
@@ -82,7 +81,7 @@ function Occurrence() {
           name="vei_tipo_veiculos"
           onChange={handleChange}
           textDefault="Tipos de Veículo"
-          customClass="select-occurrence"
+          customClass="selectOccurrence"
         />
         <Container customClass="containerPhoto">
           <form onSubmit={formHandler}>
@@ -93,10 +92,8 @@ function Occurrence() {
           </form>
           <p>Enviando {progress}%</p>
         </Container>
-
-
         <textarea
-          customClass="occ_sin_descricao"
+          className={styles.description}
           rows="5"
           cols="33"
           name="sin_descricao"
@@ -104,27 +101,30 @@ function Occurrence() {
           value={formValue.sin_descricao}
           onChange={handleChange}
         ></textarea>
+        <Container customClass="containerRadio">
+          <p className={styles.textRadio}>Necessita de um carro reserva?</p>
+          <div className={styles.subcontainerRadio} >
+            <label onChange={handleChange}>
+              <Input
+                type="radio"
+                value={true}
+                name="vei_reserva"
+                className={styles.radio}
+              />
+              Sim
+            </label>
+            <label onChange={handleChange}>
+              <Input
+                type="radio"
+                value={false}
+                name="vei_reserva"
+                className={styles.radio}
+              />
+              Não
+            </label>
+          </div>
+        </Container>
 
-        <p className="form-occ-text">Necessita de um carro reserva?</p>
-
-        <div >
-          <label onChange={handleChange}>
-            <Input
-              type="radio"
-              value={true}
-              name="vei_reserva"
-            />
-            Sim
-          </label>
-          <label onChange={handleChange}>
-            <Input
-              type="radio"
-              value={false}
-              name="vei_reserva"
-            />
-            Não
-          </label>
-        </div>
 
         <Button
           type="button"
@@ -152,11 +152,11 @@ function Occurrence() {
         ) : null
         }
 
-
-        <Button type="button" customClass="button" onClick={null} >
+        <Button type="button" customClass="buttonInternal" onClick={null} >
           Abrir Sinistro
         </Button >
-      </div>
+
+      </Container>
       <Footer />
     </Container >
   );
