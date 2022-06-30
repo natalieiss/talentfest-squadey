@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import styles from "./style.module.css";
 import Button from "../Button";
 import Modal from "../Modal";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ data, handlePayment, handleClick }) => {
-  
-
-  
-
-
+  const navigate = useNavigate()
+  const handleOccurrence= ()=>{
+   {data.apo_status ? navigate("/occurrence") : navigate("/history") } 
+  }
 
   return (
     <>
@@ -64,7 +64,9 @@ const Card = ({ data, handlePayment, handleClick }) => {
           </li>
         </ul>
       </li>
-  
+      <Button onClick={handleOccurrence} customClass="button">
+          Aviso de Sinistro
+        </Button>
     </>
   );
 };

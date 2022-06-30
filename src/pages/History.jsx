@@ -71,10 +71,7 @@ function History() {
             );
           })}
         </List>
-        <Link href="/occurrence" customClass="historyHiperlink">
-          Aviso de Sinistro
-        </Link>
-
+        
         <Footer />
       </Container>
       {isModalVisible && (
@@ -83,7 +80,7 @@ function History() {
             setIsmodalVisible(false);
           }}
         >
-           <h1>Prezado Cliente, atualize seus débitos para prosseguir</h1>
+          <h1>Prezado Cliente, atualize seus débitos para prosseguir</h1>
           <p>Resumo de débtos pendentes:</p>
           <ul>
             <li>Mensalidade: R$ 239,00</li>
