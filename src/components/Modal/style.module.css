@@ -5,19 +5,17 @@
     top: 0;
     left: 0;
     z-index: 10;
-    background-color: black (0, 0, 0, 0.8);
+    background-color: var(--font-color-EY-offBlack);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.DivConteiner{
+.DivContainer{
     background-color: #fff ;
     width: 60%;
     height: 60%;
-    color: #000;
-    border-radius: 20px;
+    color: var(--font-color-EY-offBlack);
+    border-radius: 3px;
+    padding: 5px;
 }
-
-
-

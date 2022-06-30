@@ -7,7 +7,7 @@ import Modal from "../Modal";
 const Card = ({ data, handlePayment, handleClick }) => {
   const navigate = useNavigate()
   const handleOccurrence= ()=>{
-   {data.apo_status ? navigate("/occurrence") : navigate("/history") } 
+   data.apo_status ? navigate("/occurrence") : navigate("/history") 
   }
 
   return (

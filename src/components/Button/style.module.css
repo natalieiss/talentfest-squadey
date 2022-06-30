@@ -41,6 +41,13 @@
   cursor: pointer;
   justify-self: end;
 }
+
+.modal-btn{
+font-size: 16px;
+font-weight: 600;
+margin-bottom: 5px;
+}
+
 .button:active,
 .buttonLogin:active,
 .logout:active {

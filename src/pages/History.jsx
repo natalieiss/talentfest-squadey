@@ -3,7 +3,6 @@ import { getOccurrence, getPolicy } from "../lib/firestore";
 import { authChange } from "../lib/authentication";
 import Container from "../components/Container";
 import Header from "../components/Header";
-import Link from "../components/Link";
 import List from "../components/List";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
@@ -55,7 +54,7 @@ function History() {
         }
       })
     );
-    setIsmodalVisible(false)
+    setIsmodalVisible(false);
   };
 
   return (
@@ -74,7 +73,7 @@ function History() {
             );
           })}
         </List>
-        
+
         <Footer />
       </Container>
       {isModalVisible && (
@@ -97,17 +96,20 @@ function History() {
               favor,confira os dados acima antes de prosseguir.
             </p>
           </div>
-          
-            <Input type= "radio" value= "Boleto Bancário"/>
-            <p>Boleto Bancário</p>
-            <div className="">
-              <p>
+
+          <Input type="radio" value="Boleto Bancário" />
+          <p>Boleto Bancário</p>
+          <div>
+            <p>
               A quitação do débito será realizada após a confirmação do
               pagamento do boleto pelo nosso banco, o que pode levar até 1 ou 2
               dias úteis
-              </p>
+            </p>
           </div>
-          <Button onClick={handlePayment}> Efetuar Pagamento </Button>
+          <Button onClick={handlePayment} customClass="button">
+            {" "}
+            Efetuar Pagamento{" "}
+          </Button>
         </Modal>
       )}
     </>
