@@ -8,6 +8,7 @@
   --color-EY-offWhite: #f6f6fa;
   --color-EY-yellow: #ffe600;
 }
+
 * {
   list-style: none;
   margin: 0;
@@ -17,6 +18,7 @@
   color: var(--color-EY-offBlack);
   border: none;
 }
+
 #root {
   width: 100vw;
   height: 100vh;
