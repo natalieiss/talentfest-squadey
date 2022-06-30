@@ -159,10 +159,9 @@ function Occurrence() {
             }}
           >
             <p className="form-occ-text">
-              Declaro que todas as informações constantes neste formulário para
-              fins de abertura de sinistro, são completas, verdadeiras e
-              corretas em todos os detalhes.Tendo ciência que serão averiguadas
-              e que arcarei com as consequências de afirmações inverídicas.
+              <p>
+                <a href="https://drive.google.com/file/d/1WE5IMGIGDIeLsR0iCVfW8d7NbZUkTPsT/view?usp=sharing" target="_blank">Termos e Condições</a></p>
+              Ao prosseguir com o formulário, declaro que li e concordo com todas as informações constantes no termo e condições.
             </p>
           </Modal>
         ) : null
