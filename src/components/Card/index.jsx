@@ -59,8 +59,8 @@ const Card = ({ data, handlePayment, handleClick }) => {
             <p className={styles.text}>{data.sin_tipo}</p>
           </li>
           <li>
-            <p className={styles.subTitle}>Valor do Sinistro (R$)</p>
-            <p className={styles.text}>{data.sin_preco}</p>
+            <p className={styles.subTitle}>Descrição do Sinistro (R$)</p>
+            <p className={styles.text}>{data.sin_descricao}</p>
           </li>
         </ul>
       </li>
