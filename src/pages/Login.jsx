@@ -5,8 +5,8 @@ import Logo from "../components/Logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Errors from "../components/Errors";
+import Footer from "../components/Footer";
 import { userLogin } from "../lib/authentication";
-import { MdEmail } from "react-icons/md";
 
 function Login() {
   const navigate = useNavigate();
@@ -59,6 +59,7 @@ function Login() {
           onClick={handleLogin}
         />
       </Form>
+      <Footer />
     </>
   );
 }

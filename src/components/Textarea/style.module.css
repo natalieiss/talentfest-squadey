@@ -1,0 +1,12 @@
+textarea {
+  overflow: hidden;
+  resize: none;
+  outline: none;
+}
+.description {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 3px;
+  text-align: justify;
+  font-size: 1.125rem;
+}

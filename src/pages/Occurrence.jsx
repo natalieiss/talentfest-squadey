@@ -11,22 +11,31 @@ import { app } from "../lib/firebaseConfig";
 import { createOccurrence } from "../lib/firestore";
 
 function Occurrence() {
-  const [formValue, setFormValue] = useState({ 
-    apo_codigo:"",
-    sin_tipo:"", 
-    vei_tipo_veiculo:"",   
-    sin_descricao: "", 
-    vei_reserva:false,
-    vei_imagem: "",
-});
+  const storage = getStorage(app);
   const [isModalVisible, setIsmodalVisible] = useState(false);
   const [progress, setProgress] = useState(0);
-  const storage = getStorage(app);
+
+  const [formValue, setFormValue] = useState({
+    sin_tipo: "",
+    sin_descricao: "",
+    vei_tipo_veiculo: "",
+    vei_imagem: "",
+    vei_reserva: false,
+    apo_codigo: "",
+  });
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setFormValue({ ...formValue, [name]: value });
+    console.log(name);
+    console.log(value);
+  };
+
 
   const formHandler = (e) => {
     e.preventDefault();
     const file = e.target[0].files[0];
-    console.log(file)
     uploadFiles(file);
   };
 
@@ -34,7 +43,6 @@ function Occurrence() {
     if (!file) return;
     const storageRef = ref(storage, `files/${file.name}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
-
     uploadTask.on(
       "state_changed",
       (snapshot) => {
@@ -58,15 +66,15 @@ function Occurrence() {
     );
   };
 
-  const handleInfo = (e) => {
-    console.log(e.target.value);
-      setFormValue(() => {
-      const info = { ...formValue };
-      info[e.target.name] = e.target.value;
-      console.log(info);
-      return info;
-    });
-  };
+  //const handleInfo = (e) => {
+    //console.log(e.target.value);
+      //setFormValue(() => {
+      //const info = { ...formValue };
+      //info[e.target.name] = e.target.value;
+      //console.log(info);
+      //return info;
+   // });
+  //};
 
   // const handleOptions = (e) => {
   //   console.log(e.target.value)
@@ -88,50 +96,17 @@ function Occurrence() {
   //   });
   // };
 
-  const arrOptions = [
-    {
-      text: "Assistência 24h-Reboque",
-      value: "assistência 24h",
-      name: "sin_tipo",
-    },
-    {
-      text: "Colisão",
-      value: "colisão",
-      name: "sin_tipo",
-    },
-    {
-      text: "Furto/Roubo",
-      value: "furto/roubo",
-      name: "sin_tipo",
-    },
-  ];
-
-  const arrVeichules = [
-    {
-      text: "SUV",
-      value: "suv",
-      name: "vei_tipo_veiculo",
-    },
-    {
-      text: "SUV",
-      value: "suv",
-      name: "vei_tipo_veiculo",
-    },
-  ];
-
-
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(formValue)
-      createOccurrence()
-      .then((data) => {
-        data.json()
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-  }
+  //function handleSubmit(e) {
+    //e.preventDefault();
+    //console.log(formValue)
+      //createOccurrence()
+      //.then((data) => {
+       // data.json()
+      //})
+      //.catch((error) => {
+      // console.log(error)
+     // });
+ // }
 
 
   return (
@@ -139,60 +114,56 @@ function Occurrence() {
       <Header children="AVISO DE SINISTRO" />
       <div className="container-infos-occ" >
         <Select
-          customClass="selectOccurrence"
-          options={arrOptions}
-          value={formValue.sin_tipo}
+          options={["Assistência 24h-Reboque", "Colisão", "Furto/Roubo"]}
           name="sin_tipo"
-          onChange={handleInfo}
-          defaultValue="Tipos de Sinistro"
+          onChange={handleChange}
+          textDefault="Tipos de Sinistro"
+          customClass="selectOccurrence"
         />
         <Select
-          customClass="selectOccurrence"
-          options={arrVeichules}
-          value={formValue.vei_tipo_veiculo}
-          name="vei_tipo_veiculo"
-          onChange={handleInfo}
-          defaultValue="Tipos de Veículo"
+          options={["SUV", "Ônibus"]}
+          name="vei_tipo_veiculos"
+          onChange={handleChange}
+          textDefault="Tipos de Veículo"
+          customClass="select-occurrence"
         />
-        <div className="App">
+        <Container customClass="containerPhoto">
           <form onSubmit={formHandler}>
-          <input type="file" className="input" />
-          <button type="submit">
-            Suba sua imagem
-          </button>
+            <input type="file" accept="image/png, image/jpeg, image/jpg" className="input" />
+            <button type="submit">
+              Suba sua imagem
+            </button>
           </form>
-          <hr />
-          <h2>Enviando {progress}%</h2>
-        </div>
+          <p>Enviando {progress}%</p>
+        </Container>
+
+
         <textarea
-          className="occ_sin_descricao"
+          customClass="occ_sin_descricao"
           rows="5"
           cols="33"
           name="sin_descricao"
+          maxlength="154"
           value={formValue.sin_descricao}
-          onChange={handleInfo}
-        >
-            
-          Descrição do ocorrido
-        </textarea>
+          onChange={handleChange}
+        ></textarea>
+
         <p className="form-occ-text">Necessita de um carro reserva?</p>
 
-        <div onChange={handleInfo}>
-          <label>
+        <div >
+          <label onChange={handleChange}>
             <Input
               type="radio"
-              value="true"
-              checked={formValue.vei_reserva === "Sim"}
+              value={true}
               name="vei_reserva"
             />
             Sim
           </label>
-          <label>
+          <label onChange={handleChange}>
             <Input
               type="radio"
-              value="false"
+              value={false}
               name="vei_reserva"
-              checked={formValue.vei_reserva === "Não"}
             />
             Não
           </label>
@@ -221,13 +192,16 @@ function Occurrence() {
               e que arcarei com as consequências de afirmações inverídicas.
             </p>
           </Modal>
-        ) : null}c
-        <Button type="button" customClass="button" onClick={handleSubmit}>
+        ) : null
+        }
+
+
+        <Button type="button" customClass="button" onClick={null} >
           Abrir Sinistro
-        </Button>
+        </Button >
       </div>
       <Footer />
-    </Container>
+    </Container >
   );
 }
 
