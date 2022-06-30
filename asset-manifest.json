@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5eb62793.css",
+    "main.js": "/static/js/main.2b6f2168.js",
+    "static/media/logo_EY_white.svg": "/static/media/logo_EY_white.fedd1efa531311f9ebe7b671eb7617b6.svg",
+    "index.html": "/index.html",
+    "main.5eb62793.css.map": "/static/css/main.5eb62793.css.map",
+    "main.2b6f2168.js.map": "/static/js/main.2b6f2168.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5eb62793.css",
+    "static/js/main.2b6f2168.js"
+  ]
+}
