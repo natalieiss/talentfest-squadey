@@ -70,7 +70,7 @@ function Occurrence() {
     e.preventDefault();
     console.log(formValue)
     try {
-      await createOccurrence(formValue, "apooIDfgvbfgbnnbgnn")
+      await createOccurrence(formValue, "123444959", "Pedido em Estudo", "N/A")
       console.log("Dados enviados")
       navigate("/history")
     }

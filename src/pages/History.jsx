@@ -12,7 +12,7 @@ import Input from "../components/Input";
 
 function History() {
   const [policy, setPolicy] = useState([]);
-  const [, setOccurrence] = useState([]);
+  const [setOccurrence] = useState([]);
   const [userId, setUserId] = useState();
   const [isModalVisible, setIsmodalVisible] = useState(false);
 
@@ -27,7 +27,7 @@ function History() {
       const allOccurrence = await getOccurrence(userId);
       console.log(allPolicy, allOccurrence);
       setPolicy(allPolicy);
-      setOccurrence(allOccurrence)
+      setOccurrence(allOccurrence);
     }
   }, [userId]);
 
@@ -50,6 +50,7 @@ function History() {
     setIsmodalVisible(false);
   };
 
+
   return (
     <>
       <Container customClass="containerHistory">
@@ -65,6 +66,7 @@ function History() {
               />
             );
           })}
+      
         </List>
         <Footer />
       </Container>
@@ -108,32 +110,3 @@ function History() {
   );
 }
 export default History;
-
-/*<Modal
-  onClose={() => {
-    setIsmodalVisible(false);
-  }}
->
-  <h1>Prezado Cliente,</h1>
-  <p>Resumo de débtos pendentes:</p>
-  <ul>
-    <li>Mensalidade: R$ 239,00</li>
-    <li>Vencimento:</li>
-    <li>Status: Pendente</li>
-  </ul>
-  <h2>Escolha a forma de Pagamento</h2>
-  <div className="contentWarning">
-    <p>
-      Este pagamento não contempla reembolso, após sua efetivação. Por
-      favor,confira os dados acima antes de prosseguir.
-    </p>
-  </div>
-  <div className="">
-    <h3>Boleto Bancário</h3>
-    <p>
-      A quitação do débito será realizada após a confirmação do pagamento do
-      boleto pelo nosso banco, o que pode levar até 1 ou 2 dias úteis
-    </p>
-  </div>
-  <Button type="button">Efetuar Pagamento</Button>
-</Modal>;*/
