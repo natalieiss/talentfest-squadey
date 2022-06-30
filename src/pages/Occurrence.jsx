@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
+import {
+  ref,
+  getDownloadURL,
+  uploadBytesResumable,
+  getStorage,
+} from "firebase/storage";
 import { app } from "../lib/firebaseConfig";
 import { createOccurrence } from "../lib/firestore";
 import { useNavigate } from "react-router-dom";
@@ -55,7 +60,7 @@ function Occurrence() {
       (error) => console.log(error),
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL)
+          console.log("File available at", downloadURL);
           setFormValue(() => {
             const info = { ...formValue };
             info.vei_imagem = downloadURL;
@@ -69,22 +74,21 @@ function Occurrence() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(formValue)
+    console.log(formValue);
     try {
-      await createOccurrence(formValue, "123444959", "Pedido em Estudo", "N/A")
-      console.log("Dados enviados")
-      navigate("/history")
+      await createOccurrence(formValue, "apooIDfgvbfgbnnbgnn");
+      console.log("Dados enviados");
+      navigate("/history");
+    } catch (error) {
+      console.log(error);
+      
     }
-    catch (error) {
-      console.log(error)
-    }
-
   }
 
   return (
     <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />
-      <Container customClass="subContainerOccurrence" >
+      <Container customClass="subContainerOccurrence">
         <Select
           options={["Assistência 24h-Reboque", "Colisão", "Furto/Roubo"]}
           name="sin_tipo"
@@ -99,8 +103,6 @@ function Occurrence() {
           textDefault="Tipos de Veículo"
           customClass="selectOccurrence"
         />
-
-
         <form onSubmit={formHandler} className="formPhoto">
           <label className={styles.labelPhoto}>
             <input type="file" accept="image/png, image/jpeg, image/jpg" />
@@ -115,6 +117,7 @@ function Occurrence() {
           <p className={styles.textProgress}>Enviando {progress} %</p>
         </form>
 
+
         <textarea
           className={styles.description}
           rows="5"
@@ -128,8 +131,10 @@ function Occurrence() {
 
         <Container customClass="containerRadio">
           <p className={styles.textRadio}>Necessita de um carro reserva?</p>
+
           <div className={styles.subcontainerRadio} >
             <label onChange={handleChange} className={styles.labelRadio}>
+
               <Input
                 type="radio"
                 value={true}
@@ -150,7 +155,6 @@ function Occurrence() {
           </div>
         </Container>
 
-
         <Button
           type="button"
           customClass="buttonTerms"
@@ -165,7 +169,6 @@ function Occurrence() {
           <Modal
             onClose={() => {
               setIsmodalVisible(false);
-              <button>Aceito</button>;
             }}
           >
             <p className="form-occ-text">
@@ -175,19 +178,15 @@ function Occurrence() {
               e que arcarei com as consequências de afirmações inverídicas.
             </p>
           </Modal>
-        ) : null
-        }
+        ) : null}
 
-        <Button type="button" customClass="button" onClick={handleSubmit} >
+        <Button type="button" customClass="button" onClick={handleSubmit}>
           Abrir Sinistro
-        </Button >
-
+        </Button>
       </Container>
       <Footer />
-    </Container >
+    </Container>
   );
 }
 
 export default Occurrence;
-
-
