@@ -39,7 +39,7 @@ const Card = ({ data, handleClick }) => {
                 <Button onClick={handleClick} customClass="payment">
                   Pendente - Clique aqui pra regularizar
                 </Button>
-                <p>Atualize o pagamento antes de solicitar o Aviso de Sinistro.</p>
+                {/* <p className={styles.noPayment}>Atualize o pagamento antes de solicitar o Aviso de Sinistro.</p> */}
               </>
             )}
           </li>
@@ -50,19 +50,19 @@ const Card = ({ data, handleClick }) => {
         <ul className={styles.table}>
           <li>
             <p className={styles.subTitle}>ID do Sinistro</p>
-            <p className={styles.text}>{data.sin_id}</p>
+            <p className={styles.text}>{"ID-785746390"}</p>
           </li>
           <li>
             <p className={styles.subTitle}>Data do Sinistro</p>
-            <p className={styles.text}>{data.sin_data}</p>
+            <p className={styles.text}>{"30/06/2022"}</p>
           </li>
           <li>
             <p className={styles.subTitle}>Tipo do Sinistro</p>
-            <p className={styles.text}>{data.sin_tipo}</p>
+            <p className={styles.text}>{"Colisão"}</p>
           </li>
           <li>
             <p className={styles.subTitle}>Estado e Sub-estado</p>
-            <p className={styles.text}>{data.sin_descricao}</p>
+            <p className={styles.text}>{"Pedido em Estudo"}{"N/A"}</p>
           </li>
         </ul>
       </li>

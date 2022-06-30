@@ -15,6 +15,7 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import Modal from "../components/Modal";
 import Footer from "../components/Footer";
+import icon from "../assets/image/icon-upload.png";
 import styles from "./style.module.css";
 
 function Occurrence() {
@@ -80,6 +81,7 @@ function Occurrence() {
       navigate("/history");
     } catch (error) {
       console.log(error);
+      
     }
   }
 
@@ -101,19 +103,23 @@ function Occurrence() {
           textDefault="Tipos de Veículo"
           customClass="selectOccurrence"
         />
-        <Container customClass="containerPhoto">
-          <form onSubmit={formHandler}>
-            <input
-              type="file"
-              accept="image/png, image/jpeg, image/jpg"
-              className="input"
-            />
-            <button type="submit">Suba sua imagem</button>
-          </form>
-          <p>Enviando {progress}%</p>
-        </Container>
+        <form onSubmit={formHandler} className="formPhoto">
+          <label className={styles.labelPhoto}>
+            <input type="file" accept="image/png, image/jpeg, image/jpg" />
+            <p className={styles.textPhoto}>
+              <img src={icon} alt="Ícone de adicionar imagem" className={styles.iconPhoto} />
+              Selecionar Imagem do Veículo
+            </p>
+          </label>
+          <button type="submit" className={styles.buttonPhoto}>
+            Suba sua imagem
+          </button>
+          <p className={styles.textProgress}>Enviando {progress} %</p>
+        </form>
+
+
         <textarea
-          className="occ_sin_descricao"
+          className={styles.description}
           rows="5"
           cols="33"
           name="sin_descricao"
@@ -122,10 +128,13 @@ function Occurrence() {
           onChange={handleChange}
           placeholder="Descreva o ocorrido"
         ></textarea>
+
         <Container customClass="containerRadio">
           <p className={styles.textRadio}>Necessita de um carro reserva?</p>
-          <div className={styles.subcontainerRadio}>
-            <label onChange={handleChange}>
+
+          <div className={styles.subcontainerRadio} >
+            <label onChange={handleChange} className={styles.labelRadio}>
+
               <Input
                 type="radio"
                 value={true}
@@ -134,7 +143,7 @@ function Occurrence() {
               />
               Sim
             </label>
-            <label onChange={handleChange}>
+            <label onChange={handleChange} className={styles.labelRadio}>
               <Input
                 type="radio"
                 value={false}
@@ -148,13 +157,14 @@ function Occurrence() {
 
         <Button
           type="button"
-          customClass="btn-terms-form"
+          customClass="buttonTerms"
           onClick={() => {
             setIsmodalVisible(true);
           }}
         >
-          Termos e Condições
+          Aceitar os Termos e Condições
         </Button>
+
         {isModalVisible ? (
           <Modal
             onClose={() => {

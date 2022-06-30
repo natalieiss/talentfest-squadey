@@ -33,7 +33,7 @@ export const getPolicy = async (userId) => {
   }
 }
 
-export const createOccurrence = async ( formValue, apoId) => {
+export const createOccurrence = async ( formValue, apoId, sinEstado, sinSubEstado) => {
   console.log(formValue)
   try {
     const numberID = `ID-${Math.floor(Math.random()*100000000000)}`;
@@ -41,6 +41,8 @@ export const createOccurrence = async ( formValue, apoId) => {
       sin_id: numberID,
       sin_tipo: formValue.sin_tipo,
       sin_descricao: formValue.sin_descricao,
+      sin_estado: sinEstado,
+      sin_sub_estado: sinSubEstado,
       sin_data: new Date().toLocaleString('pt-br'),
       vei_tipo_veiculo: formValue.vei_tipo_veiculo,
       vei_imagem: formValue.vei_imagem,
