@@ -2,7 +2,6 @@
   background: var(--color-EY-offWhite);
   padding: 0 15px 5px;
   border-radius: 10px;
-  margin-top: 10px;
 }
 .table {
   display: grid;
@@ -29,6 +28,10 @@
 }
 .text {
   padding: 8px 8px 15px;
+}
+.noPayment {
+  color: var(--color-EY-offWhite);
+  position: absolute;
 }
 
 @media screen and (min-width: 431px) {
