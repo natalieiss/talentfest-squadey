@@ -1,33 +1,22 @@
 import React, { useState } from "react";
 import Container from "../components/Container";
 import Header from "../components/Header";
-import Form from "../components/Form";
 import Select from "../components/Select";
 import Button from "../components/Button";
 import Input from "../components/Input";
+import Textarea from '../components/Textarea';
 import Modal from "../components/Modal";
 import Footer from "../components/Footer";
 import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
 import { app } from "../lib/firebaseConfig";
-// import { createOccurrence } from "../lib/firestore";
-
-//1- getDocs de veículos do usuário logado
-//2- a partir disso, criar array p o select de veículos
-//3- dentro do array precisa ter : marca e placa do veículo 
-/* const arrVehicles = [
-  { .map()
-    text: `${vei_marca + vei_placa}`",
-    value: apo_codigo,
-    name: "apo_codigo",
-  },
-];
-*/
+import { createOccurrence } from "../lib/firestore";
 
 function Occurrence() {
   const [selectedOption, setSelectedOption] = useState("");
   const [formValue, setFormValue] = useState({ 
     apo_codigo:"",
     sin_tipo:"",
+    vei_tipo_veiculo:"",
     sin_descricao: "", 
     vei_reserva:false,
     vei_imagem: "",
@@ -40,6 +29,7 @@ function Occurrence() {
   const formHandler = (e) => {
     e.preventDefault();
     const file = e.target[0].files[0];
+    console.log(file)
     uploadFiles(file);
   };
 
@@ -107,45 +97,57 @@ function Occurrence() {
     },
   ];
 
-  
+  const arrVeichules = [
+    {
+      text: "SUV",
+      value: "suv",
+      name: "vei_tipo_veiculo",
+    },
+    {
+      text: "SUV",
+      value: "suv",
+      name: "vei_tipo_veiculo",
+    },
+  ];
 
-  // function finalOccurrence (){
-  //   function data(){
-  //     const formDone = {
-  //       sin_descricao: formValue.sin_descricao
-  //     }
-  //   }
-  // }
+
+
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("clicou no submit");
-    // createOccurrence()
-    //   .then((data) => {})
-    //   .catch((error) => {});
+    console.log(formValue)
+      createOccurrence()
+      .then((data) => {
+        data.json()
+      })
+      .catch((error) => {
+        console.log(error)
+      });
   }
 
 
   return (
     <Container customClass="containerHistory">
       <Header children="AVISO DE SINISTRO" />
-      <Form customClass="formOccurence" onSubmit={handleSubmit}>
+      <div className="container-infos-occ" >
         <Select
-          customClass="select-occurrence"
+          customClass="selectOccurrence"
           options={arrOptions}
           onChange={handleChange}
           defaultValue="Tipos de Sinistro"
         />
-        {/* <Select
+        <Select
           customClass="select-occurrence"
-          options={null}
+          options={arrVeichules}
           onChange={handleChange}
           defaultValue="Tipos de Veículo"
-        /> */}
+        />
         <div className="App">
+          <form onSubmit={formHandler}>
           <input type="file" className="input" />
-          <button onClick={formHandler} type="submit">
+          <button type="submit">
             Suba sua imagem
           </button>
+          </form>
           <hr />
           <h2>Enviando {progress}%</h2>
         </div>
@@ -157,15 +159,18 @@ function Occurrence() {
           value={formValue.sin_descricao}
           onChange={handleInfo}
         >
+            
           Descrição do ocorrido
         </textarea>
+
+        <Textarea customClass="description" rows="5" cols="70" placeholder="Descreva o ocorrido"></Textarea>
         <p className="form-occ-text">Necessita de um carro reserva?</p>
 
         <div onChange={handleInfo}>
           <label>
             <Input
               type="radio"
-              value={true}
+              value="true"
               checked={formValue.vei_reserva === "Sim"}
               name="vei_reserva"
             />
@@ -174,7 +179,7 @@ function Occurrence() {
           <label>
             <Input
               type="radio"
-              value={false}
+              value="false"
               name="vei_reserva"
               checked={formValue.vei_reserva === "Não"}
             />
@@ -183,6 +188,7 @@ function Occurrence() {
         </div>
 
         <Button
+          type="button"
           customClass="btn-terms-form"
           onClick={() => {
             setIsmodalVisible(true);
@@ -204,11 +210,11 @@ function Occurrence() {
               e que arcarei com as consequências de afirmações inverídicas.
             </p>
           </Modal>
-        ) : null}
-        <Button type="submit" customClass="button">
+        ) : null}c
+        <Button type="button" customClass="button" onClick={handleSubmit}>
           Abrir Sinistro
         </Button>
-      </Form>
+      </div>
       <Footer />
     </Container>
   );

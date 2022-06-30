@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Container from "../components/Container";
 import Form from "../components/Form";
 import Logo from "../components/Logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import LinkText from "../components/Link";
 import Errors from "../components/Errors";
 import { userLogin } from "../lib/authentication";
 import { MdEmail } from "react-icons/md";
@@ -60,9 +58,6 @@ function Login() {
           customClass="buttonLogin"
           onClick={handleLogin}
         />
-        <LinkText href="register" customClass="hiperlink">
-          Crie sua conta
-        </LinkText>
       </Form>
     </>
   );

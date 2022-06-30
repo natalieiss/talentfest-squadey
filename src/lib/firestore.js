@@ -1,11 +1,12 @@
 import {
   getFirestore,
   collection,
-  addDoc,
   query,
   orderBy,
   getDocs,
   where,
+  doc,
+  setDoc,
 } from 'firebase/firestore';
 import { auth } from './authentication';
 import { app } from "./firebaseConfig";
@@ -32,20 +33,26 @@ export const getPolicy = async (userId) => {
   }
 }
 
-export const createOccurrence = async (id, estado, subEstado, preco, tipo, apoId) => {
+export const createOccurrence = async ( tipo, tipo_veiculo, imagem, descrição, reserva,apoId) => {
   try {
-    const docRef = await addDoc(collection(db, "SINISTROS"), {
-      sin_id: id,
-      sin_data: new Date().toLocaleString('pt-br'),
-      sin_estado: estado,
-      sin_sub_estado: subEstado,
-      sin_preco: preco,
+    const numberID = `ID-${Math.floor(Math.random()*100000000000)}`;
+    const sinRef =  {
       sin_tipo: tipo,
-      use_id: auth.currentUser.uid,
+      vei_tipo_veiculo: tipo_veiculo,
+      vei_imagem: imagem,
+      sin_descricao: descrição,
+      vei_reserva:reserva,
+      sin_id: numberID ,
       apo_codigo: apoId,
-    });
+      use_id: auth.currentUser.uid,
+      sin_data: new Date().toLocaleString('pt-br'),    
+    };
+    const docRef = await setDoc(doc(db, "SINISTROS", numberID), sinRef);
     return docRef;
   } catch (error) {
     console.log("Erro ao adicionar documento: ", error);
   }
 };
+
+
+
