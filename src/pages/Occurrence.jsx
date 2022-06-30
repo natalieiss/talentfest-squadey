@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Select from "../components/Select";
@@ -8,10 +8,15 @@ import Modal from "../components/Modal";
 import Footer from "../components/Footer";
 import { ref, getDownloadURL, uploadBytesResumable, getStorage } from "firebase/storage";
 import { app } from "../lib/firebaseConfig";
-import { createOccurrence } from "../lib/firestore";
+import { createOccurrence, getOccurrence } from "../lib/firestore";
+import { authChange } from "../lib/authentication";
+import { useNavigate } from "react-router-dom";
+
+
 
 function Occurrence() {
   const storage = getStorage(app);
+  const navigate = useNavigate();
   const [isModalVisible, setIsmodalVisible] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -96,17 +101,22 @@ function Occurrence() {
   //   });
   // };
 
-  //function handleSubmit(e) {
-    //e.preventDefault();
-    //console.log(formValue)
-      //createOccurrence()
-      //.then((data) => {
-       // data.json()
-      //})
-      //.catch((error) => {
-      // console.log(error)
-     // });
- // }
+ async function handleSubmit(e) {
+    e.preventDefault();
+    console.log(formValue)
+    try{
+      await createOccurrence(formValue, "apooIDfgvbfgbnnbgnn")
+      console.log("Dados enviados")
+       navigate("/history")
+    }
+    catch(error){
+      console.log(error)
+    }
+    
+ }
+
+
+
 
 
   return (
@@ -122,7 +132,7 @@ function Occurrence() {
         />
         <Select
           options={["SUV", "Ônibus"]}
-          name="vei_tipo_veiculos"
+          name="vei_tipo_veiculo"
           onChange={handleChange}
           textDefault="Tipos de Veículo"
           customClass="select-occurrence"
@@ -139,7 +149,7 @@ function Occurrence() {
 
 
         <textarea
-          customClass="occ_sin_descricao"
+          className="occ_sin_descricao"
           rows="5"
           cols="33"
           name="sin_descricao"
@@ -196,7 +206,7 @@ function Occurrence() {
         }
 
 
-        <Button type="button" customClass="button" onClick={null} >
+        <Button type="button" customClass="button" onClick={handleSubmit} >
           Abrir Sinistro
         </Button >
       </div>
