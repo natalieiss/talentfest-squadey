@@ -1,18 +1,21 @@
 import React from "react";
 import styles from "./style.module.css";
 
-function Select({ options, onChange, defaultValue, customClass }) {
+function Select({ name, options, onChange, textDefault, customClass }) {
   return (
-    <select className={styles[customClass]} onChange={onChange}>
-      <option selected disabled className={styles[customClass]}>
-        {defaultValue}
+    <select name={name} defaultValue="" onChange={onChange} className={styles[customClass]}>
+      <option value="" disabled>
+        {textDefault}
       </option>
-      {options.map((option, i) => (
-        <option value={option.value} key={i} className={styles[customClass]}>
-          {option.text}
-        </option>
-      ))}
-    </select>
+
+      {
+        options && options.map((option, index) => (
+          <option value={option} key={index}>
+            {option}
+          </option>
+        ))
+      }
+    </select >
   );
 }
 

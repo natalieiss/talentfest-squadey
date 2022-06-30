@@ -37,15 +37,15 @@ export const createOccurrence = async ( tipo, tipo_veiculo, imagem, descrição,
   try {
     const numberID = `ID-${Math.floor(Math.random()*100000000000)}`;
     const sinRef =  {
+      sin_id: numberID,
       sin_tipo: tipo,
+      sin_descricao: descrição,
+      sin_data: new Date().toLocaleString('pt-br'),
       vei_tipo_veiculo: tipo_veiculo,
       vei_imagem: imagem,
-      sin_descricao: descrição,
       vei_reserva:reserva,
-      sin_id: numberID ,
       apo_codigo: apoId,
       use_id: auth.currentUser.uid,
-      sin_data: new Date().toLocaleString('pt-br'),    
     };
     const docRef = await setDoc(doc(db, "SINISTROS", numberID), sinRef);
     return docRef;
