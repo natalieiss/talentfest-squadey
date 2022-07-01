@@ -5,8 +5,8 @@ import Button from "../Button";
 
 const Card = ({ data, handleClick }) => {
   const navigate = useNavigate()
-  const handleOccurrence= ()=>{
-   data.apo_status ? navigate("/occurrence") : navigate("/history") 
+  const handleOccurrence = () => {
+    data.apo_status ? navigate("/occurrence") : navigate("/history")
   }
 
   return (
@@ -37,9 +37,8 @@ const Card = ({ data, handleClick }) => {
             ) : (
               <>
                 <Button onClick={handleClick} customClass="payment">
-                  Pendente - Clique aqui pra regularizar
+                  Pendente - Clique aqui pra<br /> regularizar
                 </Button>
-                {/* <p className={styles.noPayment}>Atualize o pagamento antes de solicitar o Aviso de Sinistro.</p> */}
               </>
             )}
           </li>
@@ -66,7 +65,8 @@ const Card = ({ data, handleClick }) => {
           </li>
         </ul>
       </li>
-      <Button onClick={handleOccurrence} customClass="button">
+
+      <Button type="button" onClick={handleOccurrence} customClass="buttonCard">
         Aviso de Sinistro
       </Button>
     </>

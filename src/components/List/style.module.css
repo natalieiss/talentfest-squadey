@@ -1,17 +1,17 @@
 .historyList {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  margin: 100px 0;
+  display: grid;
+  grid-template-columns: 1fr;
   row-gap: 20px;
   column-gap: 30px;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 70px;
-  margin-bottom: 100px;
-  overflow-y: scroll;
+  justify-items: center;
+  overflow-y: auto;
   overflow-x: hidden;
+  padding: 0 20px;
 }
 
 .historyList::-webkit-scrollbar {
@@ -26,22 +26,8 @@
   border-radius: 20px;
 }
 
-@media screen and (min-width: 550px) and (max-width: 880px) {
+@media screen and (min-width: 380px) {
   .historyList {
-    margin-top: 65px;
-    margin-bottom: 0px;
-  } 
-}
-
-@media screen and (min-width: 881px) and (max-width: 1000px)  {
-  .historyList {
-    margin-top: 65px;
-    margin-bottom: 0px;
-  } 
-}
-
-@media screen and (min-width: 1001px) {
-  .historyList {
-    margin-top: 115px;
-  } 
+    margin-top: 80px;
+  }
 }

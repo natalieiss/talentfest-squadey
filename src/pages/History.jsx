@@ -8,7 +8,8 @@ import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import Modal from "../components/Modal";
-import Input from "../components/Input";
+import Radio from '../components/Radio';
+import Message from '../components/Message';
 
 function History() {
   const [policy, setPolicy] = useState([]);
@@ -29,7 +30,7 @@ function History() {
       setPolicy(allPolicy);
       setOccurrence(allOccurrence);
     }
-  }, [userId]);
+  }, [setOccurrence, userId]);
 
   useEffect(() => {
     authChange(setUserId);
@@ -50,7 +51,6 @@ function History() {
     setIsmodalVisible(false);
   };
 
-
   return (
     <>
       <Container customClass="containerHistory">
@@ -66,43 +66,44 @@ function History() {
               />
             );
           })}
-      
         </List>
         <Footer />
       </Container>
-      {isModalVisible && (
-        <Modal
-          onClose={() => {
-            setIsmodalVisible(false);
-          }}
-        >
-          <h1>Prezado Cliente, atualize seus débitos para prosseguir</h1>
-          <p>Resumo de débtos pendentes:</p>
-          <ul>
-            <li>Mensalidade: R$ 239,00</li>
-            <li>Vencimento: 10/06/2020</li>
-            <li>Status: Pendente</li>
-          </ul>
-          <h2>Escolha a forma de Pagamento</h2>
-          <div className="contentWarning">
-            <p>
-              Este pagamento não contempla reembolso, após sua efetivação. Por
-              favor,confira os dados acima antes de prosseguir.
-            </p>
-          </div>
 
-          <Input type="radio" value="Boleto Bancário" />
-          <p>Boleto Bancário</p>
-          <div>
-            <p>
-              A quitação do débito será realizada após a confirmação do
-              pagamento do boleto pelo nosso banco, o que pode levar até 1 ou 2
-              dias úteis
-            </p>
-          </div>
-          <Button onClick={handlePayment} customClass="buttonInternal">
-            {" "}
-            Efetuar Pagamento{" "}
+      {isModalVisible && (
+        <Modal classContainer="containerGeneralHistory" classSubContainer="subContainerHistory">
+          <Button type="button" onClick={() => setIsmodalVisible(false)} customClass="closeModal">
+            Fechar
+          </Button>
+          <Container customClass="textModalHistory">
+            <Message customClass="modalHistory">
+              <h1>Prezado Cliente, atualize seus débitos para prosseguir!</h1>
+              <h2>Resumo de débitos pendentes:</h2>
+              <ul>
+                <li><strong>Mensalidade:</strong> R$ 239,00</li>
+                <li><strong>Vencimento:</strong> 10/06/2020</li>
+                <li><strong>Status:</strong> Pendente</li>
+              </ul>
+              <h2>Escolha a forma de pagamento:</h2>
+              <Radio
+                classLabel='labelRadioPayment'
+                name='payment'
+                text={["Boleto Bancário"]}
+                options={["payment"]}
+                onChange={null}
+              />
+              <p>
+                Este pagamento não contempla reembolso, após sua efetivação. Por
+                favor,confira os dados acima antes de prosseguir.
+                <br /><br />
+                A quitação do débito será realizada após a confirmação do
+                pagamento do boleto pelo nosso banco, o que pode levar até 1 ou 2
+                dias úteis
+              </p>
+            </Message>
+          </Container>
+          <Button type="button" onClick={handlePayment} customClass="buttonHistory">
+            Efetuar Pagamento
           </Button>
         </Modal>
       )}

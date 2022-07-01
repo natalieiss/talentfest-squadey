@@ -29,9 +29,16 @@
 .historyHiperlink:active { 
   transform: translateY(3px);
 }
+.linkReturnHistory {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--color-EY-offWhite);
+}
 
 @media screen and (min-width: 550px) and (max-width: 1000px) {
-  .hiperlink {
+  .hiperlink,
+  .linkReturnHistory {
     font-size: 1.375rem;
   } 
   .button {
@@ -42,7 +49,8 @@
 }
 
 @media screen and (min-width: 1001px) {
-  .hiperlink {
+  .hiperlink,
+  .linkReturnHistory {
     font-size: 1.625rem;
   } 
   .historyHiperlink {

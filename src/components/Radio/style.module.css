@@ -1,0 +1,15 @@
+input[type='radio'] {
+  margin-right: 15px;
+}
+.labelRadio,
+.labelRadioPayment {
+  color: var(--color-EY-offWhite);
+  font-weight: 600;
+  margin-right: 50px;
+  font-size: 1.25rem;
+}
+.labelRadioPayment {
+  margin-right: 10px;
+  font-size: 0.875rem;
+  color: var(--color-EY-offBlack);
+}
