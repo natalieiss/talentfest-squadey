@@ -1,20 +1,26 @@
-.DivModal{
-    width: 100%;
-    height: 100vh;
-    position:absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    background-color: var(--font-color-EY-offBlack);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.modalGeneralOccurrence, 
+.containerGeneralHistory {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
-
-.DivContainer{
-    background-color: #fff ;
-    width: 90%;
-    color: var(--font-color-EY-offBlack);
-    border-radius: 3px;
-    padding: 5px;
+.modalSubOccurrence,
+.subContainerHistory {
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: var(--color-EY-offWhite);
+  color: var(--font-color-EY-offBlack);
+  border-radius: 3px;
+  position: relative;
+}
+.subContainerHistory {
+  max-width: 1024px;
 }

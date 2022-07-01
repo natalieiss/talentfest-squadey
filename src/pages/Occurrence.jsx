@@ -10,13 +10,17 @@ import { createOccurrence } from "../lib/firestore";
 import { useNavigate } from "react-router-dom";
 import Container from "../components/Container";
 import Header from "../components/Header";
-import Select from "../components/Select";
-import Button from "../components/Button";
-import Input from "../components/Input";
-import Modal from "../components/Modal";
+import Message from '../components/Message';
 import Footer from "../components/Footer";
+import Form from "../components/Form";
+import Select from "../components/Select";
+import Radio from '../components/Radio';
+import Textarea from '../components/Textarea';
+import Photo from '../components/PhotoUpload';
+import Modal from "../components/Modal";
+import Button from "../components/Button";
+import Link from "../components/Link";
 import icon from "../assets/image/icon-upload.png";
-import styles from "./style.module.css";
 
 function Occurrence() {
   const storage = getStorage(app);
@@ -37,6 +41,8 @@ function Occurrence() {
     const name = e.target.name;
     const value = e.target.value;
     setFormValue({ ...formValue, [name]: value });
+    console.log(name);
+    console.log(value);
   };
 
   const formHandler = (e) => {
@@ -49,22 +55,18 @@ function Occurrence() {
     if (!file) return;
     const storageRef = ref(storage, `files/${file.name}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const prog = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        setProgress(prog);
-      },
+    uploadTask.on("state_changed", (snapshot) => {
+      const prog = Math.round(
+        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      );
+      setProgress(prog);
+    },
       (error) => console.log(error),
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL);
           setFormValue(() => {
             const info = { ...formValue };
             info.vei_imagem = downloadURL;
-            console.log(info);
             return info;
           });
         });
@@ -74,14 +76,11 @@ function Occurrence() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(formValue);
     try {
       await createOccurrence(formValue, "apooIDfgvbfgbnnbgnn");
-      console.log("Dados enviados");
       navigate("/history");
     } catch (error) {
       console.log(error);
-      
     }
   }
 
@@ -103,23 +102,17 @@ function Occurrence() {
           textDefault="Tipos de Veículo"
           customClass="selectOccurrence"
         />
-        <form onSubmit={formHandler} className="formPhoto">
-          <label className={styles.labelPhoto}>
-            <input type="file" accept="image/png, image/jpeg, image/jpg" />
-            <p className={styles.textPhoto}>
-              <img src={icon} alt="Ícone de adicionar imagem" className={styles.iconPhoto} />
-              Selecionar Imagem do Veículo
-            </p>
-          </label>
-          <button type="submit" className={styles.buttonPhoto}>
+        <Form onSubmit={formHandler} customClass="formPhoto">
+          <Photo src={icon} text="Selecionar Imagem do Veículo" />
+          <Button type="submit" customClass="buttonPhoto">
             Suba sua imagem
-          </button>
-          <p className={styles.textProgress}>Enviando {progress} %</p>
-        </form>
-
-
-        <textarea
-          className={styles.description}
+          </Button>
+          <Message customClass="textProgress">
+            Enviando {progress} %
+          </Message>
+        </Form>
+        <Textarea
+          customClass="description"
           rows="5"
           cols="33"
           name="sin_descricao"
@@ -127,65 +120,54 @@ function Occurrence() {
           value={formValue.sin_descricao}
           onChange={handleChange}
           placeholder="Descreva o ocorrido"
-        ></textarea>
-
+        ></Textarea>
         <Container customClass="containerRadio">
-          <p className={styles.textRadio}>Necessita de um carro reserva?</p>
-
-          <div className={styles.subcontainerRadio} >
-            <label onChange={handleChange} className={styles.labelRadio}>
-
-              <Input
-                type="radio"
-                value={true}
-                name="vei_reserva"
-                className={styles.radio}
-              />
-              Sim
-            </label>
-            <label onChange={handleChange} className={styles.labelRadio}>
-              <Input
-                type="radio"
-                value={false}
-                name="vei_reserva"
-                className={styles.radio}
-              />
-              Não
-            </label>
-          </div>
+          <Message customClass="textRadio">
+            Necessita de um carro reserva?
+          </Message>
+          <Container>
+            <Radio
+              classLabel='labelRadio'
+              classInput='radio'
+              name='vei_reserva'
+              text={['Sim', 'Não']}
+              options={[true, false]}
+              onChange={handleChange}
+            />
+          </Container>
         </Container>
 
-        <Button
-          type="button"
-          customClass="buttonTerms"
-          onClick={() => {
-            setIsmodalVisible(true);
-          }}
-        >
+        <Button type="button" customClass="buttonTerms" onClick={() => setIsmodalVisible(true)}>
           Aceitar os Termos e Condições
         </Button>
 
+        <Button type="button" customClass="buttonOccurrence" onClick={handleSubmit}>
+          Abrir Sinistro
+        </Button>
+
+        <Link href="/history" customClass="linkReturnHistory">
+          Voltar a página de Histórico
+        </Link>
+
         {isModalVisible ? (
-          <Modal
-            onClose={() => {
-              setIsmodalVisible(false);
-            }}
-          >
-            <p className="form-occ-text">
+          <Modal classContainer="modalGeneralOccurrence"
+            classSubContainer="modalSubOccurrence">
+            <p>
               Declaro que todas as informações constantes neste formulário para
               fins de abertura de sinistro, são completas, verdadeiras e
               corretas em todos os detalhes.Tendo ciência que serão averiguadas
               e que arcarei com as consequências de afirmações inverídicas.
             </p>
+            <Button customClass="modalOccurrence" onClick={() => setIsmodalVisible(false)} type="button">
+              Concordo
+            </Button>
           </Modal>
-        ) : null}
+        ) : null
+        }
 
-        <Button type="button" customClass="button" onClick={handleSubmit}>
-          Abrir Sinistro
-        </Button>
-      </Container>
+      </Container >
       <Footer />
-    </Container>
+    </Container >
   );
 }
 

@@ -4,10 +4,11 @@
   border-radius: 10px;
 }
 .table {
+  width: 100%;
   display: grid;
   grid-template-columns: 260px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: start;
   align-content: flex-start;
 }
 .container p {

@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { logout } from "../../lib/authentication";
 import { FaSignInAlt } from "react-icons/fa";
 import Logo from "../Logo";
+import Message from "../Message";
+import Button from "../Button";
 import styles from "./style.module.css";
-import Button from "../Button"
-
 
 function Header({ children }) {
   const navigate = useNavigate();
@@ -20,7 +20,9 @@ function Header({ children }) {
   return (
     <header className={styles.mainHeader}>
       <Logo customClass="logo" />
-      <p className={styles.pageTitle}>{children}</p>
+      <Message customClass="pageTitle">
+        {children}
+      </Message>
       <Button type="button" onClick={goOut} customClass="logout">
         <FaSignInAlt size="26px" />
       </Button>

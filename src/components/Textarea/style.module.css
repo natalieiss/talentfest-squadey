@@ -1,0 +1,16 @@
+textarea {
+  overflow: hidden;
+  resize: none;
+  outline: none;
+}
+.description {
+  width: 100%;
+  height: 100px;
+  padding: 10px 20px;
+  border-radius: 3px;
+  text-align: justify;
+  font-size: 1.125rem;
+}
+.description::placeholder {
+  color: var(--color-EY-offBlack);
+}

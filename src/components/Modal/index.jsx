@@ -1,17 +1,13 @@
 import styles from "./style.module.css";
-import Button from "../Button/"
 
-const Modal = ({ children, onClose = () => { } }) => {
+const Modal = ({ classContainer, classSubContainer, children }) => {
 
   return (
-    <div className={styles.DivModal}>
-      <div className={styles.DivContainer}>
-        <Button customClass="modal-btn" onClick={onClose} type="button">
-          Fechar
-        </Button>
+    <section className={styles[classContainer]}>
+      <div className={styles[classSubContainer]}>
         {children}
       </div>
-    </div>
+    </section>
   );
 };
 export default Modal;
