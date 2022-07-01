@@ -6,6 +6,17 @@
 **Status do Projeto:** _Concluído_ 
    
 ** Previsto possíveis modificações para o site **
+
+**Deploy:** [EY - Seguro Auto](https://ey---cadastro-de-sinistro.firebaseapp.com/)
+
+<br />
+
+**USUÁRIOS DE TESTE:**
+  **Email 1:** juan@teste.com
+  <br />
+  **Email 2:** olivia@teste.com
+  <br />
+  **Senha:** 123456
      
 </div>
 
