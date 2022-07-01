@@ -1,7 +1,7 @@
 <div align="center">
    <img alt="Logo da empresa EY" src="/src/assets/readme/logo.jpg" height="250" width="250">
 
-## SEGURO AUTO é uma aplicação fictícia para usuários finais solicitarem o _*[sinistro](https://www.minutoseguros.com.br/perguntas-frequentes/seguro-auto/o-que-e-um-sinistro)*_ de um veículo específico. Esse desafio foi proposto pela empresa _*[EY - Brasil](https://www.ey.com/pt_br)*_. 
+## SEGURO AUTO é uma aplicação fictícia para usuários finais solicitarem o [sinistro](https://www.minutoseguros.com.br/perguntas-frequentes/seguro-auto/o-que-e-um-sinistro) de um veículo específico. Esse desafio foi proposto pela empresa [EY - Brasil](https://www.ey.com/pt_br). 
 
 **Status do Projeto:** _Concluído_ 
    
